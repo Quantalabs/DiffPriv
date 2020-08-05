@@ -9,7 +9,12 @@ to the simple Random Response mechanism, use differential privacy in your data e
 
 ![photo of room with light up text saying, 'Data has a better idea'](https://images.unsplash.com/photo-1527474305487-b87b222841cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)
 
-Photo by Franki Chamaki.
+Photo by Franki Chamaki
+
+## Downloading DIffPriv
+To download, open up you command prompt and type
+
+    python3 -m pip install DiffPriv==0.0.1
 
 
 ## How to Use
