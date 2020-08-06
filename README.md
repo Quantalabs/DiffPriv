@@ -3,6 +3,7 @@
 
 DiffPriv is a collection of different defferential privacy algorithms. From the Laplace Mechanism
 to the simple Random Response mechanism, use differential privacy in your data easily with _DiffPriv_.
+Much of this package was inspired by @quantum9innovation 's amazing [repository](https://www.github.com/quantum9innovation/Differential-Privacy)
 
 ### Our world is full of data. Our world *is* data.
 #### So let's protect it. Easily.
