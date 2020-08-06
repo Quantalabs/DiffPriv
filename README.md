@@ -14,7 +14,7 @@ Photo by Franki Chamaki
 ## Downloading DIffPriv
 To download, open up you command prompt and type
 
-    python3 -m pip install DiffPriv==0.0.1
+    python3 -m pip install DiffPriv==0.0.2
 
 
 ## How to Use
