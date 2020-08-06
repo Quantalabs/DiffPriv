@@ -1,5 +1,5 @@
 ![DiffPriv Logo](https://docs.google.com/drawings/d/e/2PACX-1vQ8A92uJpy4g09GFYxayNQXOvtl0wmXXkYFiteDFSaXVcfdbcm835wc_IjjlKHlM94rjdsM7H1Szzjq/pub?w=600)
-
+# Welcome to DiffPriv v0.0.2
 
 DiffPriv is a collection of different defferential privacy algorithms. From the Laplace Mechanism
 to the simple Random Response mechanism, use differential privacy in your data easily with _DiffPriv_.
@@ -26,3 +26,9 @@ You only need to pass *one* parameter.
     random(response_list)
     
 Response list, the parameter, is the list of data or responses in a form. 
+
+The next method we can use is the _laplace mechanism_. To use the laplace function, we use the `laplace()` function.
+
+    laplace(data, file_name, epsilon, f, sample_size=10, delta_f=None)
+    
+This will return a new dataset that is differentially privatized. @q9i's differential privacy wiki page on the laplace mechanism is a great explainer. You can view it [here](https://github.com/quantum9Innovation/Differential-Privacy/wiki/Doing-Complex-Stuff-...).
