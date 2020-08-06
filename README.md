@@ -3,7 +3,6 @@
 
 DiffPriv is a collection of different defferential privacy algorithms. From the Laplace Mechanism
 to the simple Random Response mechanism, use differential privacy in your data easily with _DiffPriv_.
-Much of this package was inspired by @quantum9innovation 's amazing [repository](https://www.github.com/quantum9innovation/Differential-Privacy)
 
 ### Our world is full of data. Our world *is* data.
 #### So let's protect it. Easily.
@@ -32,3 +31,9 @@ The next method we can use is the _laplace mechanism_. To use the laplace functi
     laplace(data, file_name, epsilon, f, sample_size=10, delta_f=None)
     
 This will return a new dataset that is differentially privatized. @q9i's differential privacy wiki page on the laplace mechanism is a great explainer. You can view it [here](https://github.com/quantum9Innovation/Differential-Privacy/wiki/Doing-Complex-Stuff-...).
+
+# People
+- @quanatum9innovation - https://github.com/quantum9innovation
+- @quantalabs -https://github.com/quantalabs
+
+View on PyPI - https://pypi.org/project/DiffPriv
