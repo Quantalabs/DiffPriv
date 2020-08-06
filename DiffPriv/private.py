@@ -26,12 +26,11 @@ def random(response_list):
             if b1 == 1:
                 response_list[i] = 1
                 
-def lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None):
+def laplace(data, file_name, epsilon, f, sample_size=10, delta_f=None):
 
     """
-    It does what it says it does.
-    For more information, see https://www.github.com/quantum9innovation/Differential-Privacy/Wiki
-    Gracias
+      For an explanation of how to use the laplace mechanism, go to https://github.com/quantum9Innovation/Differential-Privacy/wiki/Doing-Complex-Stuff-...
+      The ... is part of the URL
     """
     
     new_data = open(file_name, 'w+')
