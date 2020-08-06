@@ -1,5 +1,5 @@
 from . import np
-from . import random
+from . import random as rd
 
 def random(response_list):
     """
@@ -25,14 +25,9 @@ def random(response_list):
 
             if b1 == 1:
                 response_list[i] = 1
-                
-def laplace(data, file_name, epsilon, f, sample_size=10, delta_f=None):
 
-    """
-      For an explanation of how to use the laplace mechanism, go to https://github.com/quantum9Innovation/Differential-Privacy/wiki/Doing-Complex-Stuff-...
-      The ... is part of the URL
-    """
-    
+def lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None):
+
     new_data = open(file_name, 'w+')
     raw_data = data.readlines()
 
@@ -48,7 +43,7 @@ def laplace(data, file_name, epsilon, f, sample_size=10, delta_f=None):
         for c in range(columns):
 
             data_draft.append([float(raw_data[r].split(',')[c]) for r in range(rows)])
-            samples = [int(rows * random.random()) for i in range(sample_size)]
+            samples = [int(rows * rd.random()) for i in range(sample_size)]
             delta_f.append(0.01)
 
             for i in samples:
@@ -63,12 +58,10 @@ def laplace(data, file_name, epsilon, f, sample_size=10, delta_f=None):
         for c in range(columns):
 
             b = delta_f[c]/epsilon
-            coin_flip = round(random.random())
-            if coin_flip == 0: line.append(float(raw_data[r].split(',')[c]) + random.expovariate(1 / (2 * b)))
-            if coin_flip == 1: line.append(float(raw_data[r].split(',')[c]) - random.expovariate(1 / (2 * b)))
+            coin_flip = round(rd.random())
+            if coin_flip == 0: line.append(float(raw_data[r].split(',')[c]) + rd.expovariate(1 / (2 * b)))
+            if coin_flip == 1: line.append(float(raw_data[r].split(',')[c]) - rd.expovariate(1 / (2 * b)))
 
         new_data.writelines(str(line)+'\n')
 
     return new_data
-
-               
