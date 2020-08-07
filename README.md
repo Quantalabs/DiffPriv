@@ -37,4 +37,5 @@ This will return a new dataset that is differentially privatized. @q9i's differe
 - @quantalabs -https://github.com/quantalabs
 
 View on PyPI - https://pypi.org/project/DiffPriv
+
 Homepage - https://quantalabs.github.io/DiffPriv
