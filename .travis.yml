@@ -3,4 +3,5 @@ python:
   - "3.8"
   - "pypy"
   - "pypy3"
-install: pip install --user -r requirements.txt
+install: 
+  - pip install --user -r requirements.txt
