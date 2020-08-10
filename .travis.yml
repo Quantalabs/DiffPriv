@@ -1,7 +1,4 @@
 language: python
-python:
-  - "3.8"
-install:
-  - pip install -r requirements.txt
 script:
-  - make test
+  - pytest
+install: pip install --user -r requirements.txt
