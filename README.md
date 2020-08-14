@@ -1,7 +1,7 @@
 ![DiffPriv Logo](https://docs.google.com/drawings/d/e/2PACX-1vQ8A92uJpy4g09GFYxayNQXOvtl0wmXXkYFiteDFSaXVcfdbcm835wc_IjjlKHlM94rjdsM7H1Szzjq/pub?w=600)
 
 [![PyPI Version](https://shields.mitmproxy.org/pypi/v/DIffPriv.svg)](https://pypi.org/project/DiffPriv)
-[![Github Release](https://img.shields.io/badge/Github%20Release-v0.0.2-blue)](https://github.com/Quantalabs/DiffPriv/releases/tag/v0.0.2)
+[![Github Release](https://img.shields.io/badge/Github%20Release-v0.0.3-blue)](https://github.com/Quantalabs/DiffPriv/releases/tag/v0.0.2)
 [![Language](https://img.shields.io/badge/language-python-blueviolet)](https://github.com/Quantalabs/DiffPriv)
 # Welcome to DiffPriv v0.0.2
 
@@ -23,18 +23,28 @@ To download, open up you command prompt and type
 
 ## How to Use
 
-The first method we will use is the _Random Response Mechanism_. To use this, we use the `random` function.
+Now import DiffPriv.
+
+    from DiffPriv import private
+
+The first method we will use is the _Random Response Mechanism_. To use this, we use the `randresponse()` function.
 You only need to pass *one* parameter. 
 
-    random(response_list)
+    randresponse(response_list)
     
-Response list, the parameter, is the list of data or responses in a form. 
+Response list, the parameter, is the list of data or responses in a form. __Make sure you know how the random response mechansim works before you use it__.
 
-The next method we can use is the _laplace mechanism_. To use the laplace function, we use the `laplace()` function.
+The next method we can use is the _laplace mechanism_. To use the laplace function, we use the `lapmech()` function.
 
-    laplace(data, file_name, epsilon, f, sample_size=10, delta_f=None)
+    lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None)
     
-This will return a new dataset that is differentially privatized. @q9i's differential privacy wiki page on the laplace mechanism is a great explainer. You can view it [here](https://github.com/quantum9Innovation/Differential-Privacy/wiki/Doing-Complex-Stuff-...).
+This will return a new dataset that is differentially privatized. @q9i's differential privacy wiki page on the laplace mechanism is a great explainer. You can view it [here](https://github.com/quantum9Innovation/Differential-Privacy/wiki/Doing-Complex-Stuff-...). You should also make sure you know how the laplace mechanism works.
+
+The last method we will use is the _exponetial mechanism_. We will use the `expmech()` function.
+
+    expmech(data, file_name, epsilon, f, r, sample_size=10, delta_f=None)
+
+A lot of these are the same parameters from the `lapmech()` function, but `r` is new. r is any valid python range. So you can just use `range(0, 10)` or something like that. But again, make sure you know what the exponential mechansim is before you use it.
 
 # People
 - @quanatum9innovation - https://github.com/quantum9innovation
