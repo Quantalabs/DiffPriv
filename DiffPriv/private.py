@@ -1,7 +1,7 @@
 from . import np
-from . import random as rd
+from . import random
 
-def random(response_list):
+def randresponse(response_list):
     """
     Random
     Random uses the Random Response mechanism. Random Response is a simple differential privacy algorithm. To use random pass one parameter:
