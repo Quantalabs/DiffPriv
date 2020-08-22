@@ -1,7 +1,7 @@
 ![DiffPriv Logo](https://docs.google.com/drawings/d/e/2PACX-1vQ8A92uJpy4g09GFYxayNQXOvtl0wmXXkYFiteDFSaXVcfdbcm835wc_IjjlKHlM94rjdsM7H1Szzjq/pub?w=600)
 
 [![PyPI Version](https://shields.mitmproxy.org/pypi/v/DIffPriv.svg)](https://pypi.org/project/DiffPriv)
-[![Github Release](https://img.shields.io/badge/Github%20Release-v0.0.3-blue)](https://github.com/Quantalabs/DiffPriv/releases/tag/v0.0.2)
+[![GitHub version](https://badge.fury.io/gh/Quantalabs%2FDiffPriv.svg)](https://github.com/Quantalabs/DiffPriv/releases)
 [![Language](https://img.shields.io/badge/language-python-blueviolet)](https://github.com/Quantalabs/DiffPriv)
 # Welcome to DiffPriv v0.0.2
 
