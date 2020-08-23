@@ -13,7 +13,7 @@ Make sure it is titled properly and works. Then create a pull request and wait f
 If you are changing a bug, create an issue and then (hopefully) fix it in the file. Again, make sure that it works.
 
 ### Efficiency
-
+d
 If you are changing a function to make it more efficient, make sure to again create an issue and fix it. And most importantly, **make sure it works**.
 
 ## New Files
