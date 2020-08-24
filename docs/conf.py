@@ -46,8 +46,7 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'default'
-html_theme_path = ['.']
+html_theme = 'classic'
 html_logo = 'DiffPriv.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
