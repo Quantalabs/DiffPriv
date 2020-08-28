@@ -3,6 +3,7 @@
 [![PyPI Version](https://shields.mitmproxy.org/pypi/v/DIffPriv.svg)](https://pypi.org/project/DiffPriv)
 [![Documentation Status](https://readthedocs.org/projects/diffpriv/badge/?version=latest)](https://diffpriv.readthedocs.io/en/latest/?badge=latest)
 [![Language](https://img.shields.io/badge/language-python-blueviolet)](https://github.com/Quantalabs/DiffPriv)
+[![License](https://img.shields.io/badge/License-GNU%20GPL%20v3.0-green)](https://github.com/Quantalabs/DiffPriv/blob/master/LICENSE)
 # Welcome to DiffPriv v0.1.1
 
 DiffPriv is a collection of different defferential privacy algorithms. From the Laplace Mechanism
