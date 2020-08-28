@@ -11,7 +11,7 @@ the `expmech()` function to use it.
 Data
 ====
 
-This is quite simple. YOu should pass in something like this:
+This is quite simple. You should pass in something like this:
 
 .. code-block:: python
 
