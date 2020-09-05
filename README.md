@@ -6,6 +6,9 @@
 [![License](https://img.shields.io/badge/License-GNU%20GPL%20v3.0-green)](https://github.com/Quantalabs/DiffPriv/blob/master/LICENSE)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/Quantalabs/DiffPriv.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Quantalabs/DiffPriv/context:python)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/Quantalabs/DiffPriv.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Quantalabs/DiffPriv/alerts/)
+[![Downloads](https://pepy.tech/badge/diffpriv)](https://pepy.tech/project/diffpriv)
+[![Downloads](https://pepy.tech/badge/diffpriv/month)](https://pepy.tech/project/diffpriv/month)
+[![Downloads](https://pepy.tech/badge/diffpriv/week)](https://pepy.tech/project/diffpriv/week)
 # Welcome to DiffPriv v0.1.1
 
 DiffPriv is a collection of different defferential privacy algorithms. From the Laplace Mechanism
@@ -18,7 +21,7 @@ to the simple Random Response mechanism, use differential privacy in your data e
 
 Photo by Franki Chamaki
 
-## Downloading DIffPriv
+## Downloading DiffPriv
 To download, open up you command prompt and type
 
     python3 -m pip install DiffPriv
