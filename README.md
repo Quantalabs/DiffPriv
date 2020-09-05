@@ -8,7 +8,11 @@
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/Quantalabs/DiffPriv.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Quantalabs/DiffPriv/alerts/)
 [![Downloads](https://pepy.tech/badge/diffpriv)](https://pepy.tech/project/diffpriv)
 [![Downloads](https://pepy.tech/badge/diffpriv/month)](https://pepy.tech/project/diffpriv/month)
-[![Downloads](https://pepy.tech/badge/diffpriv/week)](https://pepy.tech/project/diffpriv/week) [![Join the chat at https://gitter.im/Quantalabs/DiffPriv](https://badges.gitter.im/Quantalabs/DiffPriv.svg)](https://gitter.im/Quantalabs/DiffPriv?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Downloads](https://pepy.tech/badge/diffpriv/week)](https://pepy.tech/project/diffpriv/week) 
+[![Join the chat at https://gitter.im/Quantalabs/DiffPriv](https://badges.gitter.im/Quantalabs/DiffPriv.svg)](https://gitter.im/Quantalabs/DiffPriv?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Issue Tracking](https://img.shields.io/badge/issue_tracking-github-blue.svg)](https://github.com/Quantalabs/DiffPriv/issues)
+[![PRs Welcome](https://img.shields.io/badge/PR-Welcome-%23FF8300.svg?)](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project)
+
 # Welcome to DiffPriv v0.1.1
 
 DiffPriv is a collection of different defferential privacy algorithms. From the Laplace Mechanism
