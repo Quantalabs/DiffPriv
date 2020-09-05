@@ -4,6 +4,7 @@
 [![Documentation Status](https://readthedocs.org/projects/diffpriv/badge/?version=latest)](https://diffpriv.readthedocs.io/en/latest/?badge=latest)
 [![Language](https://img.shields.io/badge/language-python-blueviolet)](https://github.com/Quantalabs/DiffPriv)
 [![License](https://img.shields.io/badge/License-GNU%20GPL%20v3.0-green)](https://github.com/Quantalabs/DiffPriv/blob/master/LICENSE)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/Quantalabs/DiffPriv.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Quantalabs/DiffPriv/context:python)
 # Welcome to DiffPriv v0.1.1
 
 DiffPriv is a collection of different defferential privacy algorithms. From the Laplace Mechanism
