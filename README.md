@@ -13,23 +13,25 @@
 [![Issue Tracking](https://img.shields.io/badge/issue_tracking-github-blue.svg)](https://github.com/Quantalabs/DiffPriv/issues)
 [![PRs Welcome](https://img.shields.io/badge/PR-Welcome-%23FF8300.svg?)](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project)
 
-# Welcome to DiffPriv v0.1.1
+# The truth is more important than ever—let's make sure easy privacy protection is available.
 
-DiffPriv is a collection of different defferential privacy algorithms. From the Laplace Mechanism
-to the simple Random Response mechanism, use differential privacy in your data easily with _DiffPriv_.
+Differential privacy should be simple. Now that data defines our world, we need to look at the cost of privacy. Let's make protecting privacy easy.
 
-### Our world is full of data. Our world *is* data.
-#### So let's protect it. Easily.
+<br><br>
 
-![photo of room with light up text saying, 'Data has a better idea'](https://images.unsplash.com/photo-1527474305487-b87b222841cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)
+# What is differential privacy and how can I start protecting privacy?
 
-Photo by Franki Chamaki
+Differential privacy allows for data to be preserved while making sure that attackers cannot gain access to an individual's data. Even if you publish summary statistics (like average age of participants, unlabeled addresses of participants, etc.), attackers can gain access to *individual* data (like age of *each* participant, *labeled* addresses of participants, etc.). In order to achieve this, differential privacy slightly changes the actual dataset to make sure that any uncovered data will not give away personal information. See below for how to get started!
+
+<br>
+
+# The world is data
+![The world is data](https://live.staticflickr.com/5228/5679642883_24a2e905e0_b.jpg)
 
 ## Downloading DiffPriv
 To download, open up you command prompt and type
 
     python3 -m pip install DiffPriv
-
 
 ## How to Use
 
