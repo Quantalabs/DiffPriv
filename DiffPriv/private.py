@@ -1,15 +1,19 @@
-from . import np
-from . import random
+import numpy as np
+import random as rd
+import math
 
 def randresponse(response_list):
     """
     Random
+    ==============
     Random uses the Random Response mechanism. Random Response is a simple differential privacy algorithm. To use random pass one parameter:
 
         random(response_list)
 
-    response_list is the list of responses.
-
+    PARAMETERS
+    ================
+    - response_list
+        List with data.
     """
 
     for i in response_list:
@@ -27,7 +31,37 @@ def randresponse(response_list):
                 response_list[i] = 1
 
 def lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None):
+    """
+    Exponential Mechaism
 
+        expmech(data, file_name, epsilon, f, sample_size=10, delta_f=None)
+    
+    PARAMETERS
+    =============
+    - Data
+        This is quite simple. You should pass in something like this:
+            open('data.csv', 'r')
+        Make sure that it has reading permissions.
+
+    - file_name
+        This is the name of the file that the privatized data will go into. It doesn’t have to be created for this to work.
+
+    - epsilon
+        This is one of the most important parameters in the entire algorithm. Unlike the random response mechanism, epsilon allows us to quantify privacy loss. This number should be a positive float like 3.14 or 2.71. Play around with different values to find which one works best but remember that smaller values will cause significant data changes while larger values may compromise privacy. Find the value that best works for your survey!
+
+    - f
+        f should be a function that takes in an array (all the elements in a certain column of the data) and produce an output (like the average, standard deviation, etc.). This should be a valid python function!
+
+    
+    Optional Parameters
+    ======================
+
+    - delta_f
+        delta_f is the sensitivity of f. Remeber that this is an optional parameter
+
+    - sample_size
+        sample_size is also optional. It gives the program an idea of what delta_f should be. It will default to 10 if left empty.
+    """
     new_data = open(file_name, 'w+')
     raw_data = data.readlines()
 
@@ -67,7 +101,40 @@ def lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None):
     return new_data
 
 def expmech(data, file_name, epsilon, u, r, sample_size=10, delta_u=None):
+    '''
+    Exponential Mechaism
 
+        expmech(data, file_name, epsilon, f, r, sample_size=10, delta_f=None)
+    
+    PARAMETERS
+    =============
+    - Data
+        This is quite simple. You should pass in something like this:
+            open('data.csv', 'r')
+        Make sure that it has reading permissions.
+
+    - file_name
+        This is the name of the file that the privatized data will go into. It doesn’t have to be created for this to work.
+
+    - epsilon
+        This is one of the most important parameters in the entire algorithm. Unlike the random response mechanism, epsilon allows us to quantify privacy loss. This number should be a positive float like 3.14 or 2.71. Play around with different values to find which one works best but remember that smaller values will cause significant data changes while larger values may compromise privacy. Find the value that best works for your survey!
+
+    - f
+        f should be a function that takes in an array (all the elements in a certain column of the data) and produce an output (like the average, standard deviation, etc.). This should be a valid python function!
+
+    - r
+        r is any valid python range. You could pass in:
+            range(0, 10)
+    
+    Optional Parameters
+    ======================
+
+    - delta_f
+        delta_f is the sensitivity of f. Remeber that this is an optional parameter
+
+    - sample_size
+        sample_size is also optional. It gives the program an idea of what delta_f should be. It will default to 10 if left empty.
+    '''
     new_data = open(file_name, 'w+')
     raw_data = data.readlines()
 
@@ -83,7 +150,7 @@ def expmech(data, file_name, epsilon, u, r, sample_size=10, delta_u=None):
         for c in range(columns):
 
             data_draft.append([float(raw_data[ro].split(',')[c]) for ro in range(rows)])
-            samples = [int(rows * random.random()) for i in range(sample_size)]
+            samples = [int(rows * rd.random()) for i in range(sample_size)]
             delta_u.append(0.01)
 
             for i in samples:
@@ -100,7 +167,7 @@ def expmech(data, file_name, epsilon, u, r, sample_size=10, delta_u=None):
 
         data = [float(raw_data[ro].split(',')[c]) for ro in range(rows)]
         probabilities = [math.exp(epsilon*u(data, k)/(2*delta_u[c])) for k in r]
-        rand = sum(probabilities)*random.random()
+        rand = sum(probabilities)*rd.random()
 
         r_choice = 0
         running_sum = 0

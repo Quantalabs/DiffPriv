@@ -1,0 +1,19 @@
+tests:
+  - tests/*
+
+src:
+  - setup.py
+  - DiffPriv/*
+  - setup.cfg
+  - requirements.txt
+  - pyproject.toml
+
+repo:
+  - .github/*
+
+workflows:
+  - .github/workflows
+  - .github/labeler.yml
+
+documentation:
+  - docs/*

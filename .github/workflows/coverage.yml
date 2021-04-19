@@ -1,0 +1,32 @@
+name: Code Coverage
+on: [push, pull_request]
+
+jobs:
+  run:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    steps:
+    - uses: actions/checkout@master
+    - name: Setup Python
+      uses: actions/setup-python@master
+      with:
+        python-version: 3.7
+    - name: Install Dependencies
+      run: |
+        pip install pytest
+        pip install coverage
+        pip install codecov
+        pip install -r requirements.txt
+    - name: Prepares Code Coverage Report 
+      continue-on-error: true # This way, it still uploads the coverage report even if the tests output an error.
+      run: |
+        python -m coverage run -m pytest
+    - name: Generate Coverage Report
+      run: |
+        python -m coverage report
+        python -m coverage xml
+    - name: Upload to codecov
+      run: |
+        codecov

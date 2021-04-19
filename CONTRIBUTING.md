@@ -18,6 +18,4 @@ If you are changing a function to make it more efficient, make sure to again cre
 
 ## New Files
 
-I don't know why DiffPriv needs a new file, but I'll put this here to be safe. When creating a new file, make sure it has a good purpose (eg. matplotlib's PyPlot file
-plots data on charts). Then, create your new file and put some functions (that fit the purpose of the file) in it. Then create a pull request (make sure to describe the
-updates well) and you're done.
+When creating a new file, make sure it has a good purpose. Then, create your new file and put some functions (that fit the purpose of the file) in it. Then create a pull request (make sure to describe the updates well) and you're done.
