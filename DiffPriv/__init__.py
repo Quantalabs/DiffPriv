@@ -16,8 +16,6 @@ except ImportError: # pragma: no cover
 
 import warnings
 
-# Local Imports
-from . import private
 
 # Metadata
 __version__ = '0.1.1'
