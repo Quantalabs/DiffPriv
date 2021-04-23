@@ -4,6 +4,7 @@
 [![Documentation Status](https://readthedocs.org/projects/diffpriv/badge/?version=latest)](https://diffpriv.readthedocs.io/en/latest/?badge=latest)
 [![PyPI Version](https://shields.mitmproxy.org/pypi/v/DIffPriv.svg)](https://pypi.org/project/DiffPriv)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e8eefc6c39998b74f69a/maintainability)](https://codeclimate.com/github/Quantalabs/DiffPriv/maintainability)
+[![codecov](https://codecov.io/gh/Quantalabs/DiffPriv/branch/master/graph/badge.svg?token=wCz4qTJxEO)](https://codecov.io/gh/Quantalabs/DiffPriv)
 [![License](https://img.shields.io/badge/License-GNU%20GPL%20v3.0-green)](https://github.com/Quantalabs/DiffPriv/blob/master/LICENSE)
 [![Downloads](https://pepy.tech/badge/diffpriv)](https://pepy.tech/project/diffpriv)
 [![Downloads](https://pepy.tech/badge/diffpriv/month)](https://pepy.tech/project/diffpriv/month)
