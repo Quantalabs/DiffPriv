@@ -1,17 +1,16 @@
 ![DiffPriv Logo](https://docs.google.com/drawings/d/e/2PACX-1vQ8A92uJpy4g09GFYxayNQXOvtl0wmXXkYFiteDFSaXVcfdbcm835wc_IjjlKHlM94rjdsM7H1Szzjq/pub?w=600)
 
-[![PyPI Version](https://shields.mitmproxy.org/pypi/v/DIffPriv.svg)](https://pypi.org/project/DiffPriv)
+[![Build Status](https://www.travis-ci.com/Quantalabs/DiffPriv.svg?branch=master)](https://www.travis-ci.com/Quantalabs/DiffPriv)
 [![Documentation Status](https://readthedocs.org/projects/diffpriv/badge/?version=latest)](https://diffpriv.readthedocs.io/en/latest/?badge=latest)
-[![Language](https://img.shields.io/badge/language-python-blueviolet)](https://github.com/Quantalabs/DiffPriv)
-[![License](https://img.shields.io/badge/License-GNU%20GPL%20v3.0-green)](https://github.com/Quantalabs/DiffPriv/blob/master/LICENSE)
+[![PyPI Version](https://shields.mitmproxy.org/pypi/v/DIffPriv.svg)](https://pypi.org/project/DiffPriv)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/Quantalabs/DiffPriv.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Quantalabs/DiffPriv/context:python)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/Quantalabs/DiffPriv.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Quantalabs/DiffPriv/alerts/)
+[![DeepSource](https://deepsource.io/gh/Quantalabs/DiffPriv.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/Quantalabs/DiffPriv/?ref=repository-badge)
+[![License](https://img.shields.io/badge/License-GNU%20GPL%20v3.0-green)](https://github.com/Quantalabs/DiffPriv/blob/master/LICENSE)
 [![Downloads](https://pepy.tech/badge/diffpriv)](https://pepy.tech/project/diffpriv)
 [![Downloads](https://pepy.tech/badge/diffpriv/month)](https://pepy.tech/project/diffpriv/month)
 [![Downloads](https://pepy.tech/badge/diffpriv/week)](https://pepy.tech/project/diffpriv/week) 
 [![Chat on GitHub Discussions](https://img.shields.io/badge/Chat-on%20Discussions-green)](https://github.com/Quantalabs/DiffPriv/discussions)
-[![Issue Tracking](https://img.shields.io/badge/issue_tracking-github-blue.svg)](https://github.com/Quantalabs/DiffPriv/issues)
-[![PRs Welcome](https://img.shields.io/badge/PR-Welcome-%23FF8300.svg?)](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project)
+
 
 # The truth is more important than ever—let's make sure easy privacy protection is available.
 
