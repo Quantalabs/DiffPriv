@@ -5,7 +5,7 @@ currentdir = os.path.dirname(os.path.realpath(__file__))
 parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
 
-import DiffPriv.private as private
+import DiffPriv.diff as private
 
 def test_randresp():
     a = [1, 1, 0, 1, 0, 1]

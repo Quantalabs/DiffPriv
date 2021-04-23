@@ -16,6 +16,9 @@ except ImportError: # pragma: no cover
 
 import warnings
 
+# Local
+from . import diff
+from . import enc
 
 # Metadata
 __version__ = '0.1.1'
