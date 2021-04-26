@@ -12,55 +12,54 @@
 [![Chat on GitHub Discussions](https://img.shields.io/badge/Chat-on%20Discussions-green)](https://github.com/Quantalabs/DiffPriv/discussions)
 
 
-# The truth is more important than ever—let's make sure easy privacy protection is available.
+> The truth is more important than ever—let's make sure easy privacy protection is available.
 
 Differential privacy should be simple. Now that data defines our world, we need to look at the cost of privacy. Let's make protecting privacy easy.
 
 <br><br>
 
-# What is differential privacy and how can I start protecting privacy?
+### What is differential privacy and how can I start protecting privacy?
 
 Differential privacy allows for data to be preserved while making sure that attackers cannot gain access to an individual's data. Even if you publish summary statistics (like average age of participants, unlabeled addresses of participants, etc.), attackers can gain access to *individual* data (like age of *each* participant, *labeled* addresses of participants, etc.). In order to achieve this, differential privacy slightly changes the actual dataset to make sure that any uncovered data will not give away personal information. See below for how to get started!
 
 <br>
 
-# The world is data
-![The world is data](https://live.staticflickr.com/5228/5679642883_24a2e905e0_b.jpg)
-
 ## Downloading DiffPriv
 To download, open up you command prompt and type
+```sh
+    pip install DiffPriv
+```
+or from the source repo:
+```sh
+    git clone https://github.com/Quantalabs/DiffPriv
+    cd diffpriv
+    python setup.py install
+```
+### Conda Enviorment
+We currently do not have our package on anaconda, however, we are working on getting it on conda, and should be avaliable soon.
 
-    python3 -m pip install DiffPriv
 
-## How to Use
+## Documentation
 
-Now import DiffPriv.
+Random Response:
+```python
+import diffpriv
 
-    from DiffPriv import private
+diffpriv.diff.randresponse(data)
+```
+Laplace Mechanism:
+```python
+import diffpriv
 
-The first method we will use is the _Random Response Mechanism_. To use this, we use the `randresponse()` function.
-You only need to pass *one* parameter. 
+diffpriv.diff.lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None)
+```
+Exponential Mechanism:
+```python
+import diffpriv
 
-    randresponse(response_list)
-    
-Response list, the parameter, is the list of data or responses in a form. __Make sure you know how the random response mechansim works before you use it__.
+diffpriv.diff.expmech(data, file_name, epsilon, u, r, sample_size=10, delta_u=None)
+```
 
-The next method we can use is the _laplace mechanism_. To use the laplace function, we use the `lapmech()` function.
+**Note: The above documentation works if you are cloning the repo, however, if installing the package, use `private` rather than `diff`. This will be changed to only use `diff` in all future releases**
 
-    lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None)
-    
-This will return a new dataset that is differentially privatized. @q9i's differential privacy wiki page on the laplace mechanism is a great explainer. You can view it [here](https://github.com/quantum9Innovation/Differential-Privacy/wiki/Doing-Complex-Stuff-...). You should also make sure you know how the laplace mechanism works.
-
-The last method we will use is the _exponetial mechanism_. We will use the `expmech()` function.
-
-    expmech(data, file_name, epsilon, f, r, sample_size=10, delta_f=None)
-
-A lot of these are the same parameters from the `lapmech()` function, but `r` is new. r is any valid python range. So you can just use `range(0, 10)` or something like that. But again, make sure you know what the exponential mechansim is before you use it.
-
-# People
-- @quanatum9innovation - https://github.com/quantum9innovation
-- @quantalabs -https://github.com/quantalabs
-
-View on PyPI - https://pypi.org/project/DiffPriv
-
-Homepage - https://quantalabs.github.io/DiffPriv
+For more functions, view the [docs](https://diffpriv.rtfd.io)
