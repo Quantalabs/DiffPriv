@@ -4,14 +4,14 @@ import math
 
 def randresponse(response_list):
     """
-    Random
-    ==============
     Random uses the Random Response mechanism. Random Response is a simple differential privacy algorithm. To use random pass one parameter:
+
+    .. code-block:: python
 
         random(response_list)
 
     PARAMETERS
-    ================
+    +++++++++++++++
     - response_list
         List with data.
     """
@@ -32,12 +32,14 @@ def randresponse(response_list):
 
 def lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None):
     """
-    Exponential Mechaism
+    Preforms the laplace mechanism.
 
-        expmech(data, file_name, epsilon, f, sample_size=10, delta_f=None)
+    .. code-block:: python
+
+        lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None)
     
     PARAMETERS
-    =============
+    ++++++++++++++++++++
     - Data
         This is quite simple. You should pass in something like this:
             open('data.csv', 'r')
@@ -54,7 +56,7 @@ def lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None):
 
     
     Optional Parameters
-    ======================
+    ++++++++++++++++++++++
 
     - delta_f
         delta_f is the sensitivity of f. Remeber that this is an optional parameter
@@ -102,12 +104,14 @@ def lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None):
 
 def expmech(data, file_name, epsilon, u, r, sample_size=10, delta_u=None):
     '''
-    Exponential Mechaism
+    Preforms the exponential mechanism.
 
-        expmech(data, file_name, epsilon, f, r, sample_size=10, delta_f=None)
+    .. code-block:: python
+
+        expmech(data, file_name, epsilon, u, r, sample_size=10, delta_f=None)
     
     PARAMETERS
-    =============
+    +++++++++++++
     - Data
         This is quite simple. You should pass in something like this:
             open('data.csv', 'r')
@@ -127,7 +131,7 @@ def expmech(data, file_name, epsilon, u, r, sample_size=10, delta_u=None):
             range(0, 10)
     
     Optional Parameters
-    ======================
+    ++++++++++++++++++++++++++
 
     - delta_f
         delta_f is the sensitivity of f. Remeber that this is an optional parameter
