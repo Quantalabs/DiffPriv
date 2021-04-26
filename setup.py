@@ -17,7 +17,7 @@ setuptools.setup(
         "Documentation": "https://diffpriv.readthedocs.io",
         "Source Code": "https://github.com/Quantalabs/DiffPriv"
     },
-    entry_points={"console_scripts": ["diffpriv=diffpriv.diffpriv:main"]},
+    entry_points={"console_scripts": ["diffpriv=DiffPriv.cli:run"]},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",

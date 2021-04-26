@@ -15,10 +15,12 @@ except ImportError: # pragma: no cover
     ')
 
 import warnings
+import sys
 
 # Local
 from . import diff
 from . import enc
+from . import cli
 
 # Metadata
 __version__ = '0.1.1'
@@ -40,21 +42,5 @@ def _sanity_check():
         )
 
 _sanity_check()
-
-def main():
-    print(
-        'DiffPriv \n'
-        '================== \n'
-        'Version - '+__version__+'\n'
-        'Stable - '+str(__stable__)+'\n'
-        'Source Code - '+__source__+'\n'
-        'Documentation - '+__docs__+'\n'
-        '\n'
-        'DiffPriv is a python package for differential privacy and other privacy-related tools. Documentation can be accessed via the online documentation or through the built-in'
-        ' python `help()` command.'
-    )
-
-if __name__ == '__main__':
-    main()  # pragma: no cover
 
 del _sanity_check
