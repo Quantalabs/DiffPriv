@@ -7,6 +7,7 @@ def lfl_encrypt(enc_file, key_file, output):
     txt = Path(enc_file).read_text().replace('/n', '')
     with open(key_file, 'r') as key:
         keyvar = csv.reader(key)
+        keyvar = list(keyvar)
 
     with open(output, 'w') as opt:
         opt.write(enc.lfl(txt, keyvar))
@@ -15,6 +16,7 @@ def lfl_decrypt(denc_file, key_file, output):
     txt = Path(denc_file).read_text().replace('/n', '')
     with open(key_file, 'r') as key:
         keyvar = csv.reader(key)
+        keyvar = list(keyvar)
     
     with open(output, 'w') as opt:
         opt.write(enc.dec_lfl(txt, keyvar))

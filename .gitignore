@@ -131,3 +131,8 @@ dmypy.json
 
 # DiffPriv Test Output Files
 *_test.csv
+text.txt
+key.csv
+output.txt
+rciphtext.txt
+routput.txt
