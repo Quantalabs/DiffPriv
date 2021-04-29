@@ -37,13 +37,13 @@ class TestRciph:
         with open('rciphtext.txt', 'w') as text:
             text.write('Text')
         
-        DiffPriv.cli.run(['diffpriv', 'rciph', 'rciphtext.txt', 'routput.txt'])
+        DiffPriv.cli.run(['diffpriv', 'rcipher', 'rciphtext.txt', 'routput.txt'])
     
     def test_rciph_nouput(self):
         with open('rciphtext.txt', 'w') as text:
             text.write('Text')
         
-        DiffPriv.cli.run(['diffpriv', 'rciph', 'rciphtext.txt'])
+        DiffPriv.cli.run(['diffpriv', 'rcipher', 'rciphtext.txt'])
 
 class TestDlfl:
     def test_dlfl_woutput(self):
