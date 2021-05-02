@@ -25,7 +25,7 @@ Differential privacy allows for data to be preserved while making sure that atta
 <br>
 
 ## Downloading DiffPriv
-To download, open up you command prompt and type
+To download, open up your command prompt and type
 ```sh
     pip install DiffPriv
 ```
@@ -35,8 +35,8 @@ or from the source repo:
     cd diffpriv
     python setup.py install
 ```
-### Conda Enviorment
-We currently do not have our package on anaconda, however, we are working on getting it on conda, and should be avaliable soon.
+### Conda Envioronment
+We currently do not have our package on anaconda, however, we are working on getting it on conda, and should be available soon.
 
 
 ## Documentation
