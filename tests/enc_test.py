@@ -20,9 +20,11 @@ class TestPorta:
     def test_enc (self):
         cipher = enc.Porta()
 
+        assert cipher.encrypt('DEFEND THE EAST WALL 1', 'War') == 'SRXTAV GZT WPFB JSNY 1'
         assert cipher.encrypt('DEFEND THE EAST WALL', 'War') == 'SRXTAV GZT WPFB JSNY'
     
     def test_dec (self):
         cipher = enc.Porta()
 
-        assert cipher.encrypt('SRXTAV GZT WPFB JSNY', 'War') == 'DEFEND THE EAST WALL'
+        assert cipher.decrypt('SRXTAV GZT WPFB JSNY 1', 'War') == 'DEFEND THE EAST WALL 1'
+        assert cipher.decrypt('SRXTAV GZT WPFB JSNY', 'War') == 'DEFEND THE EAST WALL'
