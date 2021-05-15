@@ -76,3 +76,129 @@ def dec_lfl(text: str, key: list):
             newtext.append(splittext[x])
 
     return ''.join(newtext)
+
+class Porta:
+    def __init__(self, alphabet=None):
+        """
+        For using the Porta Cipher. Read about the cipher - http://practicalcryptography.com/ciphers/classical-era/porta/
+
+        .. code-block:: python
+
+            cipher = Porta(alphabet=None) 
+        
+        PARAMETERS
+        +++++++++++++++++
+
+        `alphabet`: Defaults to none. The alphabet for the porta cipher
+        """
+        if alphabet == None:
+            self.alphabet = {
+                "A": ("ABCDEFGHIJKLM ", "NOPQRSTUVWXYZ "),
+                "B": ("ABCDEFGHIJKLM ", "NOPQRSTUVWXYZ "),
+                "C": ("ABCDEFGHIJKLM ", "ZNOPQRSTUVWXY "),
+                "D": ("ABCDEFGHIJKLM ", "ZNOPQRSTUVWXY "),
+                "E": ("ABCDEFGHIJKLM ", "YZNOPQRSTUVWX "),
+                "F": ("ABCDEFGHIJKLM ", "YZNOPQRSTUVWX "),
+                "G": ("ABCDEFGHIJKLM ", "XYZNOPQRSTUVW "),
+                "H": ("ABCDEFGHIJKLM ", "XYZNOPQRSTUVW "),
+                "I": ("ABCDEFGHIJKLM ", "WXYZNOPQRSTUV "),
+                "J": ("ABCDEFGHIJKLM ", "WXYZNOPQRSTUV "),
+                "K": ("ABCDEFGHIJKLM ", "VWXYZNOPQRSTU "),
+                "L": ("ABCDEFGHIJKLM ", "VWXYZNOPQRSTU "),
+                "M": ("ABCDEFGHIJKLM ", "UVWXYZNOPQRST "),
+                "N": ("ABCDEFGHIJKLM ", "UVWXYZNOPQRST "),
+                "O": ("ABCDEFGHIJKLM ", "TUVWXYZNOPQRS "),
+                "P": ("ABCDEFGHIJKLM ", "TUVWXYZNOPQRS "),
+                "Q": ("ABCDEFGHIJKLM ", "STUVWXYZNOPQR "),
+                "R": ("ABCDEFGHIJKLM ", "STUVWXYZNOPQR "),
+                "S": ("ABCDEFGHIJKLM ", "RSTUVWXYZNOPQ "),
+                "T": ("ABCDEFGHIJKLM ", "RSTUVWXYZNOPQ "),
+                "U": ("ABCDEFGHIJKLM ", "QRSTUVWXYZNOP "),
+                "V": ("ABCDEFGHIJKLM ", "QRSTUVWXYZNOP "),
+                "W": ("ABCDEFGHIJKLM ", "PQRSTUVWXYZNO "),
+                "X": ("ABCDEFGHIJKLM ", "PQRSTUVWXYZNO "),
+                "Y": ("ABCDEFGHIJKLM ", "OPQRSTUVWXYZN "),
+                "Z": ("ABCDEFGHIJKLM ", "OPQRSTUVWXYZN "),
+            }
+        else:
+            self.alphabet = alphabet
+
+    def encrypt(self, text: str, key: str):
+        """
+        Encrypts text using the porta cipher.
+
+        .. code-block:: python
+
+            cipher = Porta()
+            cipher.encrypt(text: str, key: str)
+        
+        PARAMETERS
+        ++++++++++++++++
+
+        text: `str` The text to encrypt (will only encrypt characters A-M and no numbers or symbols, and simply doesn't change the characters.)
+
+        key: `str` The key to encrypt with
+        """
+        brokenkey = list(key.upper())
+        brokentext = list(text.upper())
+        key1 = []
+
+        for charpos in range(0, len(brokentext)):
+            if charpos >= len(brokenkey):
+                key1.append(brokenkey[len(brokenkey)-charpos])
+            else:
+                key1.append(brokenkey[charpos])
+
+        encrypted = []
+
+        table = [self.alphabet[char.upper()] for char in key1]
+        
+        for x in range(0, len(brokentext)):
+            for char in range(0, len(list(table[x][0]))):
+                if list(table[x][0])[char] == brokentext[x]:
+                    encrypted.append(list(table[x][1])[char])
+                else:
+                    encrypted.append(brokentext[x])
+
+
+        return ''.join(encrypted)
+
+    def decrypt(self, text: str, key: str):
+        """
+        Encrypts text using the porta cipher.
+
+        .. code-block:: python
+
+            cipher = Porta()
+            cipher.decrypt(text: str, key: str)
+        
+        PARAMETERS
+        ++++++++++++++++
+
+        text: `str` The text to decrypt
+
+        key: `str` The key to decrypt with
+        """
+
+        brokenkey = list(key.upper())
+        brokentext = list(text.upper())
+        key1 = []
+
+        for charpos in range(0, len(brokentext)):
+            if charpos >= len(brokenkey):
+                key1.append(brokenkey[len(brokenkey)-charpos])
+            else:
+                key1.append(brokenkey[charpos])
+
+        decrypted = []
+
+        table = [self.alphabet[char.upper()] for char in key1]
+        
+        for x in range(0, len(brokentext)):
+            for char in range(0, len(list(table[x][0]))):
+                if list(table[x][1])[char] == brokentext[x]:
+                    decrypted.append(list(table[x][0])[char])
+                else:
+                    decrypted.append(brokentext[x])
+
+        return ''.join(decrypted)
