@@ -91,7 +91,7 @@ class Porta:
 
         `alphabet`: Defaults to none. The alphabet for the porta cipher
         """
-        if alphabet == None:
+        if alphabet is None:
             self.alphabet = {
                 "A": ("ABCDEFGHIJKLM ", "NOPQRSTUVWXYZ "),
                 "B": ("ABCDEFGHIJKLM ", "NOPQRSTUVWXYZ "),
@@ -166,7 +166,7 @@ class Porta:
                     found = True
                     break
 
-            if found == False:
+            if found is False:
                 encrypted.append(brokentext[x])
             
 
@@ -217,7 +217,7 @@ class Porta:
                     found = True
                     break
             
-            if found == False:
+            if found is False:
                 decrypted.append(brokentext[x])
 
         return ''.join(decrypted)
