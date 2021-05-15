@@ -145,7 +145,8 @@ class Porta:
 
         for charpos in range(0, len(brokentext)):
             if charpos >= len(brokenkey):
-                key1.append(brokenkey[len(brokenkey)-charpos])
+                brokenkey = brokenkey+brokenkey
+                key1.append(brokenkey[charpos])
             else:
                 key1.append(brokenkey[charpos])
 
@@ -154,18 +155,27 @@ class Porta:
         table = [self.alphabet[char.upper()] for char in key1]
         
         for x in range(0, len(brokentext)):
+            found = False
             for char in range(0, len(list(table[x][0]))):
                 if list(table[x][0])[char] == brokentext[x]:
                     encrypted.append(list(table[x][1])[char])
-                else:
-                    encrypted.append(brokentext[x])
+                    found = True
+                    break
+                elif list(table[x][1])[char] == brokentext[x]:
+                    encrypted.append(list(table[x][0])[char])
+                    found = True
+                    break
+
+            if found == False:
+                encrypted.append(brokentext[x])
+            
 
 
         return ''.join(encrypted)
 
     def decrypt(self, text: str, key: str):
         """
-        Encrypts text using the porta cipher.
+        Decrypts text using the porta cipher.
 
         .. code-block:: python
 
@@ -186,7 +196,8 @@ class Porta:
 
         for charpos in range(0, len(brokentext)):
             if charpos >= len(brokenkey):
-                key1.append(brokenkey[len(brokenkey)-charpos])
+                brokenkey = brokenkey+brokenkey
+                key1.append(brokenkey[charpos])
             else:
                 key1.append(brokenkey[charpos])
 
@@ -195,10 +206,18 @@ class Porta:
         table = [self.alphabet[char.upper()] for char in key1]
         
         for x in range(0, len(brokentext)):
+            found = False
             for char in range(0, len(list(table[x][0]))):
                 if list(table[x][1])[char] == brokentext[x]:
                     decrypted.append(list(table[x][0])[char])
-                else:
-                    decrypted.append(brokentext[x])
+                    found = True
+                    break
+                elif list(table[x][0])[char] == brokentext[x]:
+                    decrypted.append(list(table[x][1])[char])
+                    found = True
+                    break
+            
+            if found == False:
+                decrypted.append(brokentext[x])
 
         return ''.join(decrypted)
