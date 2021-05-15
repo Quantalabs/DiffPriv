@@ -28,7 +28,7 @@ def rcipher(file, output):
     with open(output, 'w') as opt:
         opt.write(enc.reverse_cipher(txt))
 
-def run(args):
+def run(args=sys.argv):
     if args[1] == 'lfl':
         if len(args) < 5:
             lfl_encrypt(args[2], args[3], args[2])
