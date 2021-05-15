@@ -46,4 +46,4 @@ def run(args):
             rcipher(args[2], args[3])
 
 if __name__ == "__main__":
-    run(sys.argv)
+    run(sys.argv) # pragma: no cover
