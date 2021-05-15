@@ -2,12 +2,11 @@ def reverse_cipher(msg: str):
     '''
     The reverse cipher. Note: this encryption scheme is not recommeneded, and is often reffered to as the 'weakest cipher ever in history.' Returns the string backwards.
 
-    .. code-block:: python
+    
 
         reverse_cipher('Hi') # Returns 'iH'
 
-    PARAMETERS
-    ++++++++++++++
+    ## Parameters
     
     - msg: The message to encrypt with the reverse cipher
     '''
@@ -17,12 +16,11 @@ def lfl(text: str, key: list):
     '''
     Does a letter for letter encryption. Takes one letter and replaces it with another letter specified in the key.
     
-    .. code-block:: python
+    
 
         lfl('Text', [['t', 'h'], ['e', 'i'], ['x', 'g'], ['T', 'H']]) # Returns 'High'. NOTE: this is case sensitive.
     
-    PARAMETERS
-    ++++++++++++++++++++
+    ## Parameters
 
     - text: Text to encrypt
 
@@ -49,12 +47,11 @@ def dec_lfl(text: str, key: list):
     '''
     Decrypts a letter for letter encryption.
     
-    .. code-block:: python
+    
 
         dec_lfl('High', [['t', 'h'], ['e', 'i'], ['x', 'g'], ['T', 'H']]) # Returns 'Text'. NOTE: this is case sensitive.
     
-    PARAMETERS
-    ++++++++++++++++++++
+    ## Parameters
 
     - text: Text to encrypt
 
@@ -82,12 +79,11 @@ class Porta:
         """
         For using the Porta Cipher. Read about the cipher - http://practicalcryptography.com/ciphers/classical-era/porta/
 
-        .. code-block:: python
+        
 
             cipher = Porta(alphabet=None) 
         
-        PARAMETERS
-        +++++++++++++++++
+        ## Parameters
 
         `alphabet`: Defaults to none. The alphabet for the porta cipher
         """
@@ -127,13 +123,12 @@ class Porta:
         """
         Encrypts text using the porta cipher.
 
-        .. code-block:: python
+        
 
             cipher = Porta()
             cipher.encrypt(text: str, key: str)
         
-        PARAMETERS
-        ++++++++++++++++
+        ## Parameters
 
         text: `str` The text to encrypt (will only encrypt characters A-M and no numbers or symbols, and simply doesn't change the characters.)
 
@@ -177,13 +172,12 @@ class Porta:
         """
         Decrypts text using the porta cipher.
 
-        .. code-block:: python
+        
 
             cipher = Porta()
             cipher.decrypt(text: str, key: str)
         
-        PARAMETERS
-        ++++++++++++++++
+        ## Parameters
 
         text: `str` The text to decrypt
 
