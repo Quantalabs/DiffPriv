@@ -42,5 +42,3 @@ def _sanity_check():
 _sanity_check()
 
 del _sanity_check
-
-import numpy as np # Import Numpy after sanity check passes
