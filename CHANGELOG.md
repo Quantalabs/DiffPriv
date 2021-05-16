@@ -50,6 +50,7 @@ None
 
 - @quantum9Innovation 
 - @Quantalabs 
+
 ---
 # **v0.0.1**
 
