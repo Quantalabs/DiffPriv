@@ -247,7 +247,7 @@ class SSS(object):
         self.data = str(self.data)
         if n > self.bytes:
             n = self.bytes
-            warnings.warn('Dividing up a byte into more shares than it has digits is currently not supported. '
+            raise ValueError('Dividing up a byte into more shares than it has digits is currently not supported. '
                           f'Using maximum of `n={len(self.data)}` shares for data with {len(self.data)} bytes.')
 
         prev = 0
