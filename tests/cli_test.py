@@ -67,3 +67,28 @@ class TestDlfl:
             testfile.write('Text')
         
         DiffPriv.cli.run(['diffpriv', 'dlfl', 'text.txt', 'key.csv'])
+
+class TestPorta:
+    def test_enc(self):
+        with open('porta_test.txt', 'w') as test_file:
+            test_file.write('Test String')
+            
+        DiffPriv.cli.run(['diffpriv', 'porta', 'porta_test.txt', 'porta_test.txt', 'key'])
+    
+    def test_dec(self):
+        DiffPriv.cli.run(['diffpriv', 'portadec', 'porta_test.txt', 'porta_test.txt', 'key'])
+
+class TestHelp:
+    def test_base_help(self):
+        DiffPriv.cli.run(['diffpriv', '--help'])
+    
+    def test_command_help(self):
+        DiffPriv.cli.run(['diffpriv', '--help', 'porta'])
+    
+
+def test_command_error():
+    try:
+        DiffPriv.cli.run(['diffpriv', 'not-a-command'])
+        raise RuntimeError('Command "not-a-command" doesn\'t output an error despite not existing in the command library.')
+    except ValueError:
+        print('All good. No Error.')

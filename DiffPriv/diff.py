@@ -27,7 +27,7 @@ def randresponse(response_list):
             if b1 == 0: # pragma: no cover
                 response_list[i] = 0
 
-            if b1 == 1:
+            if b1 == 1: # pragma: no cover
                 response_list[i] = 1
 
 def lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None):
