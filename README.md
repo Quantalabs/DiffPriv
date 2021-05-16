@@ -18,7 +18,7 @@ Differential privacy should be simple. Now that data defines our world, we need 
 
 <br><br>
 
-### What is differential privacy and how can I start protecting privacy?
+## What is differential privacy?
 
 Differential privacy allows for data to be preserved while making sure that attackers cannot gain access to an individual's data. Even if you publish summary statistics (like average age of participants, unlabeled addresses of participants, etc.), attackers can gain access to *individual* data (like age of *each* participant, *labeled* addresses of participants, etc.). In order to achieve this, differential privacy slightly changes the actual dataset to make sure that any uncovered data will not give away personal information. See below for how to get started!
 
@@ -37,29 +37,3 @@ or from the source repo:
 ```
 ### Conda Envioronment
 We currently do not have our package on anaconda, however, we are working on getting it on conda, and should be available soon.
-
-
-## Documentation
-
-Random Response:
-```python
-import diffpriv
-
-diffpriv.diff.randresponse(data)
-```
-Laplace Mechanism:
-```python
-import diffpriv
-
-diffpriv.diff.lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None)
-```
-Exponential Mechanism:
-```python
-import diffpriv
-
-diffpriv.diff.expmech(data, file_name, epsilon, u, r, sample_size=10, delta_u=None)
-```
-
-**Note: The above documentation works if you are cloning the repo, however, if installing the package, use `private` rather than `diff`. This will be changed to only use `diff` in all future releases**
-
-For more functions, view the [docs](https://diffpriv.rtfd.io)
