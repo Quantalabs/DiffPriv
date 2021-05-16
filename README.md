@@ -36,4 +36,4 @@ or from the source repo:
     python setup.py install
 ```
 ### Conda Envioronment
-We currently do not have our package on anaconda, however, we are working on getting it on conda, and should be available soon.
+We currently do not have our package on Anaconda, however, we are working on getting it on conda, and should be available soon.
