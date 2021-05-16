@@ -1,1 +1,4 @@
 theme: jekyll-theme-minimal
+show_downloads: true
+description: DiffPriv is a differential privacy package for python
+logo: /assets/img/logo.png
