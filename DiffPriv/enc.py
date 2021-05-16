@@ -77,7 +77,7 @@ def dec_lfl(text: str, key: list):
 class Porta:
     def __init__(self, alphabet=None):
         """
-        For using the Porta Cipher. Read about the cipher - http://practicalcryptography.com/ciphers/classical-era/porta/
+        For using the Porta Cipher. Read about the cipher - [http://practicalcryptography.com/ciphers/classical-era/porta/](http://practicalcryptography.com/ciphers/classical-era/porta/)
 
         
 

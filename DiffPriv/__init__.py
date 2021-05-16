@@ -1,3 +1,11 @@
+
+"""
+DiffPriv is a package focused on privacy, with differential privacy and encryption schemes.
+
+.. include:: ../README.md
+"""
+__docformat__ = "restructuredtext"
+
 import warnings
 import sys
 import json
@@ -10,9 +18,13 @@ from . import cli
 
 # Metadata
 __version__ = '0.1.1'
+"""Package Version"""
 __stable__ = True
+"""If package is stable or not."""
 __source__ = 'https://github.com/Quantalabs/DiffPriv'
+"""Source Repo"""
 __docs__ = 'https://diffpriv.readthedocs.io'
+"""Documentation URL"""
 
 def _sanity_check():
     # Import Requirements
