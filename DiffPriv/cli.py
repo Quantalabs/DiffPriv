@@ -1,3 +1,9 @@
+"""
+The cli can be accessed through the help command. Use `--help` to get a command list, and `--help [command]` for help on a specfic command.
+
+The documentation below is best accessed through the `--help` command or through the built-in python attribute `__doc__`
+"""
+
 from . import enc
 from pathlib import Path
 import csv
