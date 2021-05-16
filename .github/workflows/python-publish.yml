@@ -1,4 +1,4 @@
-name: Pubslish Main NPM Package to NPM and GPR
+name: Pubslish to PyPI
 
 on:
   release:
