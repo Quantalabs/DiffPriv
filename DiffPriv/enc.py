@@ -1,3 +1,6 @@
+from . import warnings
+
+
 def reverse_cipher(msg: str):
     '''
     The reverse cipher. Note: this encryption scheme is not recommeneded, and is often reffered to as the 'weakest cipher ever in history.' Returns the string backwards.
@@ -215,3 +218,58 @@ class Porta:
                 decrypted.append(brokentext[x])
 
         return ''.join(decrypted)
+
+class SSS(object):
+    """
+    ## Shamir's Secret Sharing System (abbreviated SSS)
+    Wikipedia: https://en.wikipedia.org/wiki/Shamir's_Secret_Sharing
+
+    ---
+
+    Shamir's Secret Sharing System provides a way of dividing up a secret,
+    S, among N parties. S can *only* be found if all N parties put their keys together.
+    Shamir's Secret Sharing System uses the coefficients of a polynomial to encode the data
+    and assigns each party a point on the polynomial.
+    """
+
+    def __init__(self, bytes):
+        """Initializes Shamir's Secret Sharing System with data from parameter `bytes`"""
+        self.data = str(bytes)
+        self.bytes = len(self.data)
+        self.shares = []
+
+    def divide(self, n, quiet=False):
+        """
+        Returns a tuple of digits from the data, dividing it up into `n` shares
+        Turn on quiet mode with `quiet=True`
+        """
+
+        self.data = str(self.data)
+        if n > self.bytes:
+            n = self.bytes
+            warnings.warn('Dividing up a byte into more shares than it has digits is currently not supported. '
+                          f'Using maximum of `n={len(self.data)}` shares for data with {len(self.data)} bytes.')
+
+        prev = 0
+        for k in range(n):
+            self.shares.append(''.join(self.data[prev : prev + int((self.bytes - prev) / (n - k))]))
+            prev += int((self.bytes - prev) / (n - k))
+
+        deleted = 0
+        for i, share in enumerate(self.shares):
+            if share == '':
+                warnings.warn(f'Share {i+deleted} holds no information. Discarding ...')
+                del self.shares[i]
+                warnings.warn(f'Share {i+deleted} has been discarded.')
+                deleted += 1
+
+        if not quiet:
+            print('===========================\n'
+                  'SUMMARY\n'
+                  '===========================\n'
+                  'Operation successful\n'
+                  f'{deleted} shares discarded')
+            print('===========================\n'
+                  'SHARES\n'
+                  '===========================\n'
+                  'shares=\n'+str(self.shares))
