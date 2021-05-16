@@ -37,22 +37,23 @@ or from the source repo:
 ```
 ### Conda Envioronment
 We currently do not have our package on Anaconda, however, we are working on getting it on conda, and should be available soon. However, there *is* a workaround for conda systems. Try building from the source with:
-\`\`\`shell
+
+``````sh
 git clone https://github.com/Quantalabs/DiffPriv
 cd DiffPriv
-\`\`\`
+```
 Then, create a `conda` virtual environment which should initialize `pip` with:
-\`\`\`shell
+``````sh
 conda update conda
 conda create -n DiffPriv python=3.9 anaconda
 conda activate DiffPriv
-\`\`\`
+```
 Lastly, install dependencies with:
-\`\`\`shell
+``````sh
 conda install numpy
 pip install luddite  # luddite is not available on conda
-\`\`\`
+```
 Now, you can build the package from the source with:
-\`\`\`shell
+``````sh
 conda setup.py install
-\`\`\`
+```
