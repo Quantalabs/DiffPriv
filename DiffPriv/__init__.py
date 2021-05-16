@@ -29,7 +29,7 @@ def _sanity_check():
     latest_version = list(releases.items())[-1]
 
     try:
-        assert __version__ == latest_version[0]
+        assert __version__ == latest_version[0] # skipcq: BAN-B101
     except AssertionError:  # pragma: no cover
         # We ignore code coverage for this because there is no way to test this through pytest, but it has been tested manually
         warnings.warn(
