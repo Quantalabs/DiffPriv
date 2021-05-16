@@ -119,7 +119,7 @@ def help(command=None):
         print('\n\33[31mportadec\33[0m')
         print('Decrypts file with the porta cipher. Format is \33[1mdiffpriv portadec input_file output_file key\33[0m Last option is passed in as text not a file. Ex. \33[1mdiffpriv portadec file.txt output.txt thisisthekey\33[0m')
     else:
-        eval('print('+command+'.__doc__)')
+        eval('print('+command+'.__doc__)') # skipcq: PYL-W0123
 
 def run(args=sys.argv):
     if args[1] == 'lfl':
