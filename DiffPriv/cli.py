@@ -138,7 +138,7 @@ for the `diff` submodule.
     if submodule is None:
         webbrowser.open(base_url+'DiffPriv.html')
     else:
-        webbrowser.open(base_url+submodule+'.html')
+        webbrowser.open('DiffPriv/'+base_url+submodule+'.html')
 
 def changelog():
     """--changelog
@@ -173,6 +173,11 @@ def run(args=sys.argv):
             help(command=args[2])
     elif args[1] == '--changelog':
         changelog()
+    elif args[1] == '--docs':
+        if len(args) < 3:
+            docs()
+        else:
+            docs(submodule=args[2])
     else:
         raise ValueError('Command '+ args[1] + ' not found. Use --help for list of commands.')
 
