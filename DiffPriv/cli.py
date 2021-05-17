@@ -119,9 +119,10 @@ def help(command=None):
         print('Encrypts file with the porta cipher. Format is \33[1mdiffpriv porta input_file output_file key\33[0m Last option is passed in as text not a file. Ex. \33[1mdiffpriv porta file.txt output.txt thisisthekey\33[0m')
         print('\n\33[31mportadec\33[0m')
         print('Decrypts file with the porta cipher. Format is \33[1mdiffpriv portadec input_file output_file key\33[0m Last option is passed in as text not a file. Ex. \33[1mdiffpriv portadec file.txt output.txt thisisthekey\33[0m')
-        print('\n\33[31--docs\33[0m')
+        print('\n\33[31m--docs\33[0m')
         print('Shows diffpriv documentation for package or submodule.')
-        print('\n\33[31m--changelog')
+        print('\n\33[31m--changelog\33[0m')
+        print('Shows the changelog.')
     else:
         eval('print('+command+'.__doc__)') # skipcq: PYL-W0123
 
@@ -138,6 +139,12 @@ for the `diff` submodule.
         webbrowser.open(base_url+'DiffPriv.html')
     else:
         webbrowser.open(base_url+submodule+'.html')
+
+def changelog():
+    """--changelog
+Shows the changelog
+"""
+    webbrowser.open('https://quantalabs.github.io/DiffPriv/CHANGELOG')
 
 def run(args=sys.argv):
     if args[1] == 'lfl':
@@ -164,6 +171,8 @@ def run(args=sys.argv):
             help()
         else:
             help(command=args[2])
+    elif args[1] == '--changelog':
+        changelog()
     else:
         raise ValueError('Command '+ args[1] + ' not found. Use --help for list of commands.')
 
