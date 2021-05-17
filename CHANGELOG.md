@@ -1,3 +1,14 @@
+# v1.0.0-beta _pre release_
+## Bug Fixes
+- Fix version error
+- Fix a CLI error
+- Fix a circular import error
+
+## New Features
+- Add a `--docs` command to view the documentation for DiffPriv
+- Add a `--changelog` command to view the changelog
+
+---
 # v1.0.0-alpha _pre release_
 The first beta release of the first version of diffpriv. Includes:
 - Differential Privacy
