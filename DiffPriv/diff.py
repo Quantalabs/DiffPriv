@@ -1,6 +1,6 @@
-import numpy as np
-import random as rd
-import math
+from . import numpy as np
+from . import random as rd
+from . import math
 
 def randresponse(response_list):
     """

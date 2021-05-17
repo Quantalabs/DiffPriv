@@ -6,10 +6,18 @@ DiffPriv is a package focused on privacy, with differential privacy and encrypti
 """
 __docformat__ = "restructuredtext"
 
+# Sanity Check Imports
 import warnings
-import sys
 import json
 from urllib import request
+
+# Dependecy Imports
+import sys
+import csv
+import webbrowser
+import math
+import random
+import numpy
 
 # Local
 from . import diff
@@ -17,7 +25,7 @@ from . import enc
 from . import cli
 
 # Metadata
-__version__ = '0.1.1'
+__version__ = '1.0.0a0'
 """Package Version"""
 __stable__ = True
 """If package is stable or not."""

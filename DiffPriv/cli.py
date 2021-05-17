@@ -6,8 +6,9 @@ The documentation below is best accessed through the `--help` command or through
 
 from . import enc
 from pathlib import Path
-import csv
-import sys
+from . import csv
+from . import sys
+from . import webbrowser
 
 def lfl(enc_file, key_file, output):
     """lfl
@@ -118,8 +119,25 @@ def help(command=None):
         print('Encrypts file with the porta cipher. Format is \33[1mdiffpriv porta input_file output_file key\33[0m Last option is passed in as text not a file. Ex. \33[1mdiffpriv porta file.txt output.txt thisisthekey\33[0m')
         print('\n\33[31mportadec\33[0m')
         print('Decrypts file with the porta cipher. Format is \33[1mdiffpriv portadec input_file output_file key\33[0m Last option is passed in as text not a file. Ex. \33[1mdiffpriv portadec file.txt output.txt thisisthekey\33[0m')
+        print('\n\33[31--docs\33[0m')
+        print('Shows diffpriv documentation for package or submodule.')
+        print('\n\33[31m--changelog')
     else:
         eval('print('+command+'.__doc__)') # skipcq: PYL-W0123
+
+def docs(submodule=None):
+    """docs
+    
+    \33[1mdiffpriv docs submodule\33[0moptional
+
+The `--docs` command will open up the diffpriv documentation. If you pass in a submodule it will open up the docs for that submodule, eg. `--docs diff` will open up docs
+for the `diff` submodule.
+    """
+    base_url = 'https://quantalabs.github.io/DiffPriv/docs/'
+    if submodule is None:
+        webbrowser.open(base_url+'DiffPriv.html')
+    else:
+        webbrowser.open(base_url+submodule+'.html')
 
 def run(args=sys.argv):
     if args[1] == 'lfl':
