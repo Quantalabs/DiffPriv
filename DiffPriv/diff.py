@@ -18,7 +18,7 @@ def randresponse(response_list):
 
     for i in response_list:
         b = np.random.randint(2)
-        if b == 0:
+        if b == 0: # pragma: no cover
             response_list[i] = 0
 
         if b == 1:
