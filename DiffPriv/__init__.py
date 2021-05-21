@@ -15,6 +15,8 @@ except ImportError: # pragma: no cover
     ')
 
 import warnings
+import math
+import random
 import sys
 
 # Local
