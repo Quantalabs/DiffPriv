@@ -25,7 +25,7 @@ from . import enc
 from . import cli
 
 # Metadata
-__version__ = 'v1.0.0rc'
+__version__ = 'v1.0.0'
 """Package Version"""
 __stable__ = True
 """If package is stable or not."""
