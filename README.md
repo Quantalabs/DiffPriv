@@ -26,7 +26,7 @@ Differential privacy allows for data to be preserved while making sure that atta
 ## Downloading DiffPriv
 To download, open up your command prompt and type
 ```sh
-    pip install DiffPriv==1.0.0b0 # This is a pre-release, so you need the version number
+    pip install DiffPriv==1.0.0rc # This is a pre-release, so you need the version number
 ```
 or from the source repo:
 ```sh
