@@ -1,4 +1,4 @@
-from . import numpy as np
+from . import np
 from . import random as rd
 from . import math
 
