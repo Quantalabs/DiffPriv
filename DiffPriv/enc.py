@@ -351,15 +351,12 @@ class SSS(object):
         
         del f
         del parsed
-        del degree
-        del n
         del options
         del start
         del end
         del picked
         del item
         del x
-        del share
         del shares
 
         if not quiet:
