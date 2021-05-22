@@ -1,7 +1,6 @@
 ![DiffPriv Logo](https://docs.google.com/drawings/d/e/2PACX-1vQ8A92uJpy4g09GFYxayNQXOvtl0wmXXkYFiteDFSaXVcfdbcm835wc_IjjlKHlM94rjdsM7H1Szzjq/pub?w=600)
 
 [![Build Status](https://www.travis-ci.com/Quantalabs/DiffPriv.svg?branch=master)](https://www.travis-ci.com/Quantalabs/DiffPriv)
-[![Documentation Status](https://readthedocs.org/projects/diffpriv/badge/?version=latest)](https://diffpriv.readthedocs.io/en/latest/?badge=latest)
 [![PyPI Version](https://shields.mitmproxy.org/pypi/v/DIffPriv.svg)](https://pypi.org/project/DiffPriv)
 [![DeepSource](https://deepsource.io/gh/Quantalabs/DiffPriv.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/Quantalabs/DiffPriv/?ref=repository-badge)
 [![codecov](https://codecov.io/gh/Quantalabs/DiffPriv/branch/master/graph/badge.svg?token=wCz4qTJxEO)](https://codecov.io/gh/Quantalabs/DiffPriv)
@@ -18,7 +17,7 @@ Differential privacy should be simple. Now that data defines our world, we need 
 
 <br><br>
 
-### What is differential privacy and how can I start protecting privacy?
+## What is differential privacy?
 
 Differential privacy allows for data to be preserved while making sure that attackers cannot gain access to an individual's data. Even if you publish summary statistics (like average age of participants, unlabeled addresses of participants, etc.), attackers can gain access to *individual* data (like age of *each* participant, *labeled* addresses of participants, etc.). In order to achieve this, differential privacy slightly changes the actual dataset to make sure that any uncovered data will not give away personal information. See below for how to get started!
 
@@ -27,7 +26,7 @@ Differential privacy allows for data to be preserved while making sure that atta
 ## Downloading DiffPriv
 To download, open up your command prompt and type
 ```sh
-    pip install DiffPriv
+    pip install DiffPriv==1.0.0b0 # This is a pre-release, so you need the version number
 ```
 or from the source repo:
 ```sh
@@ -36,30 +35,24 @@ or from the source repo:
     python setup.py install
 ```
 ### Conda Envioronment
-We currently do not have our package on anaconda, however, we are working on getting it on conda, and should be available soon.
+We currently do not have our package on Anaconda, however, we are working on getting it on conda, and should be available soon. However, there *is* a workaround for conda systems. Try building from the source with:
 
-
-## Documentation
-
-Random Response:
-```python
-import diffpriv
-
-diffpriv.diff.randresponse(data)
+```sh
+git clone https://github.com/Quantalabs/DiffPriv
+cd DiffPriv
 ```
-Laplace Mechanism:
-```python
-import diffpriv
-
-diffpriv.diff.lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None)
+Then, create a `conda` virtual environment which should initialize `pip` with:
+```sh
+conda update conda
+conda create -n DiffPriv python=3.9 anaconda
+conda activate DiffPriv
 ```
-Exponential Mechanism:
-```python
-import diffpriv
-
-diffpriv.diff.expmech(data, file_name, epsilon, u, r, sample_size=10, delta_u=None)
+Lastly, install dependencies with:
+```sh
+conda install numpy
+pip install luddite  # luddite is not available on conda
 ```
-
-**Note: The above documentation works if you are cloning the repo, however, if installing the package, use `private` rather than `diff`. This will be changed to only use `diff` in all future releases**
-
-For more functions, view the [docs](https://diffpriv.rtfd.io)
+Now, you can build the package from the source with:
+```sh
+conda setup.py install
+```

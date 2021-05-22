@@ -1,6 +1,6 @@
-import numpy as np
-import random as rd
-import math
+from . import numpy as np
+from . import random as rd
+from . import math
 
 def randresponse(response_list):
     """
@@ -18,7 +18,7 @@ def randresponse(response_list):
 
     for i in response_list:
         b = np.random.randint(2)
-        if b == 0:
+        if b == 0: # pragma: no cover
             response_list[i] = 0
 
         if b == 1:
