@@ -1,6 +1,8 @@
+from numpy import longdouble, longlong
 from . import warnings
 from . import math
 from . import random
+from . import np
 
 
 def reverse_cipher(msg: str):
@@ -368,3 +370,33 @@ class SSS(object):
             print('after copying the data.')
 
         del self
+
+def dec_SSS(pairs):
+    """
+    | Input | Output |
+    | --- | --- |
+    | (x,y) | strung-together polynomial coefficients |
+    """
+    shares = len(pairs)
+
+    equation = []
+    solutions = []
+
+    for pair in pairs:
+        solutions.append(pair[1])
+        row = []
+        for k in range(shares): row.append(pair[0] ** k)
+        equation.append(row)
+    
+    equation = np.array(equation, dtype=np.int64)
+    solutions = np.array(solutions, dtype=np.int64)
+
+    print(equation[0])
+    print(equation[1])
+    print(solutions)
+
+    print(equation.shape)
+    print(solutions.shape)
+
+    x = np.linalg.solve(equation, solutions)
+    print(x)
