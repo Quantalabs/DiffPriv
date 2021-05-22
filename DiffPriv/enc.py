@@ -279,6 +279,8 @@ class SSS(object):
                   '===========================\n'
                   'shares=\n'+str(self.shares))
 
+        return self.shares
+
     def encrypt(self, width=100, quiet=False):
         """
         Create a nth degree polynomial and return a list of points in the form (x,y) for each share
@@ -355,11 +357,10 @@ class SSS(object):
         del start
         del end
         del picked
-        del pairs
         del item
         del x
-        del shares
         del share
+        del shares
 
         if not quiet:
             print('===================================')
@@ -369,13 +370,13 @@ class SSS(object):
             print('Make sure to close this terminal ')
             print('after copying the data.')
 
-        del self
+        return pairs
 
 def dec_SSS(pairs):
     """
     | Input | Output |
     | --- | --- |
-    | (x,y) | strung-together polynomial coefficients |
+    | (x,y) | polynomial coefficients |
     """
     shares = len(pairs)
 
@@ -388,15 +389,15 @@ def dec_SSS(pairs):
         for k in range(shares): row.append(pair[0] ** k)
         equation.append(row)
     
-    equation = np.array(equation, dtype=np.int64)
-    solutions = np.array(solutions, dtype=np.int64)
-
-    print(equation[0])
-    print(equation[1])
-    print(solutions)
-
-    print(equation.shape)
-    print(solutions.shape)
+    equation = np.array(equation, dtype=int)
+    solutions = np.array(solutions, dtype=int)
 
     x = np.linalg.solve(equation, solutions)
-    print(x)
+    x = np.array(x, dtype=int)
+
+    print('Decryption successful!\n'
+          'Below are the polynomial coefficients\n'
+          '=====================================\n'
+          f'{x}')
+
+    return x
