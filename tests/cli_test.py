@@ -84,7 +84,16 @@ class TestHelp:
     
     def test_command_help(self):
         DiffPriv.cli.run(['diffpriv', '--help', 'porta'])
+
+class TestDocs:
+    def test_docs(self):
+        DiffPriv.cli.run(['diffpriv', '--docs'])
     
+    def test_docs_submodule(self):
+        DiffPriv.cli.run(['diffpriv', '--docs', 'cli'])
+
+def test_changelog():
+    DiffPriv.cli.run(['diffpriv', '--changelog'])
 
 def test_command_error():
     try:
