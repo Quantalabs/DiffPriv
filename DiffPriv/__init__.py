@@ -16,7 +16,7 @@ import csv
 import webbrowser
 import math
 import random
-import numpy
+import numpy as np
 
 # Local
 from . import diff
