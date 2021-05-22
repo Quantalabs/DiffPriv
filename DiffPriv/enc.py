@@ -10,7 +10,9 @@ def reverse_cipher(msg: str):
     
     - msg: The message to encrypt with the reverse cipher
     '''
-    return msg[::-1] # pragma: no cover
+    new_msg = msg[::-1]
+    del msg
+    return new_msg # pragma: no cover
 
 def lfl(text: str, key: list):
     '''
@@ -40,6 +42,8 @@ def lfl(text: str, key: list):
             newtext.append(rchar)
         else:
             newtext.append(splittext[x])
+    del text
+    del key
 
     return ''.join(newtext)
 
@@ -71,6 +75,9 @@ def dec_lfl(text: str, key: list):
             newtext.append(rchar)
         else:
             newtext.append(splittext[x])
+    
+    del text
+    del key
 
     return ''.join(newtext)
 
@@ -165,7 +172,8 @@ class Porta:
                 encrypted.append(brokentext[x])
             
 
-
+        del key
+        del text
         return ''.join(encrypted)
 
     def decrypt(self, text: str, key: str):
@@ -213,5 +221,8 @@ class Porta:
             
             if found is False:
                 decrypted.append(brokentext[x])
+        
+        del key
+        del text
 
         return ''.join(decrypted)

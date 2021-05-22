@@ -30,6 +30,8 @@ def randresponse(response_list):
             if b1 == 1: # pragma: no cover
                 response_list[i] = 1
 
+    del response_list
+
 def lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None):
     """
     Preforms the laplace mechanism.
@@ -98,6 +100,13 @@ def lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None):
             if coin_flip == 1: line.append(float(raw_data[r].split(',')[c]) - rd.expovariate(1 / (2 * b)))
 
         new_data.writelines(str(line)+'\n')
+
+    del data
+    del file_name
+    del epsilon
+    del f
+    del sample_size
+    del delta_f
 
     return new_data
 
@@ -186,5 +195,14 @@ def expmech(data, file_name, epsilon, u, r, sample_size=10, delta_u=None):
         line.append(r_choice)
 
     new_data.writelines(str(line)+'\n')
+
+    del data
+    del file_name
+    del epsilon
+    del u
+    del r
+    del sample_size
+    del delta_u
+
 
     return new_data
