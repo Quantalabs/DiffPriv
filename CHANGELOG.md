@@ -1,3 +1,14 @@
+# v1.0.0rc
+## Bug Fixes
+- Security Fix with commit 46f3363.
+    With the diff and enc modules, parameters were stored in python memory, and never removed. This commit deletes these parameters and helps prevent attackers from gaining access to these parameters, which can help them gain access to the original text and/or data.
+
+## New Features
+None.
+
+
+---
+
 # v1.0.0-beta _pre release_
 ## Bug Fixes
 - Fix version error
