@@ -9,6 +9,7 @@
 [![Downloads](https://pepy.tech/badge/diffpriv/month)](https://pepy.tech/project/diffpriv/month)
 [![Downloads](https://pepy.tech/badge/diffpriv/week)](https://pepy.tech/project/diffpriv/week) 
 [![Chat on GitHub Discussions](https://img.shields.io/badge/Chat-on%20Discussions-green)](https://github.com/Quantalabs/DiffPriv/discussions)
+![Conda](https://img.shields.io/conda/dn/conda-forge/diffpriv?label=Anaconda%20Downloads)
 
 
 > The truth is more important than ever—let's make sure easy privacy protection is available.
