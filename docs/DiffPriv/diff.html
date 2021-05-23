@@ -77,7 +77,7 @@
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">response_list</span><span class="p">:</span>
         <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># pragma: no cover</span>
             <span class="n">response_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 
         <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -88,6 +88,8 @@
 
             <span class="k">if</span> <span class="n">b1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># pragma: no cover</span>
                 <span class="n">response_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">del</span> <span class="n">response_list</span>
 
 <span class="k">def</span> <span class="nf">lapmech</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">delta_f</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -157,6 +159,13 @@
             <span class="k">if</span> <span class="n">coin_flip</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="n">line</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">raw_data</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="n">c</span><span class="p">])</span> <span class="o">-</span> <span class="n">rd</span><span class="o">.</span><span class="n">expovariate</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">b</span><span class="p">)))</span>
 
         <span class="n">new_data</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">del</span> <span class="n">data</span>
+    <span class="k">del</span> <span class="n">file_name</span>
+    <span class="k">del</span> <span class="n">epsilon</span>
+    <span class="k">del</span> <span class="n">f</span>
+    <span class="k">del</span> <span class="n">sample_size</span>
+    <span class="k">del</span> <span class="n">delta_f</span>
 
     <span class="k">return</span> <span class="n">new_data</span>
 
@@ -246,6 +255,15 @@
 
     <span class="n">new_data</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
+    <span class="k">del</span> <span class="n">data</span>
+    <span class="k">del</span> <span class="n">file_name</span>
+    <span class="k">del</span> <span class="n">epsilon</span>
+    <span class="k">del</span> <span class="n">u</span>
+    <span class="k">del</span> <span class="n">r</span>
+    <span class="k">del</span> <span class="n">sample_size</span>
+    <span class="k">del</span> <span class="n">delta_u</span>
+
+
     <span class="k">return</span> <span class="n">new_data</span>
 </pre></div>
 
@@ -278,7 +296,7 @@
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">response_list</span><span class="p">:</span>
         <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># pragma: no cover</span>
             <span class="n">response_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 
         <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -289,6 +307,8 @@
 
             <span class="k">if</span> <span class="n">b1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># pragma: no cover</span>
                 <span class="n">response_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">del</span> <span class="n">response_list</span>
 </pre></div>
 
         </details>
@@ -386,6 +406,13 @@ List with data.</li>
             <span class="k">if</span> <span class="n">coin_flip</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="n">line</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">raw_data</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="n">c</span><span class="p">])</span> <span class="o">-</span> <span class="n">rd</span><span class="o">.</span><span class="n">expovariate</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">b</span><span class="p">)))</span>
 
         <span class="n">new_data</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">del</span> <span class="n">data</span>
+    <span class="k">del</span> <span class="n">file_name</span>
+    <span class="k">del</span> <span class="n">epsilon</span>
+    <span class="k">del</span> <span class="n">f</span>
+    <span class="k">del</span> <span class="n">sample_size</span>
+    <span class="k">del</span> <span class="n">delta_f</span>
 
     <span class="k">return</span> <span class="n">new_data</span>
 </pre></div>
@@ -519,6 +546,15 @@ sample_size is also optional. It gives the program an idea of what delta_f shoul
         <span class="n">line</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r_choice</span><span class="p">)</span>
 
     <span class="n">new_data</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">del</span> <span class="n">data</span>
+    <span class="k">del</span> <span class="n">file_name</span>
+    <span class="k">del</span> <span class="n">epsilon</span>
+    <span class="k">del</span> <span class="n">u</span>
+    <span class="k">del</span> <span class="n">r</span>
+    <span class="k">del</span> <span class="n">sample_size</span>
+    <span class="k">del</span> <span class="n">delta_u</span>
+
 
     <span class="k">return</span> <span class="n">new_data</span>
 </pre></div>

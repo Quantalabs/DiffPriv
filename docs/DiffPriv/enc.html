@@ -84,7 +84,9 @@
 <span class="sd">    </span>
 <span class="sd">    - msg: The message to encrypt with the reverse cipher</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">return</span> <span class="n">msg</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># pragma: no cover</span>
+    <span class="n">new_msg</span> <span class="o">=</span> <span class="n">msg</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">del</span> <span class="n">msg</span>
+    <span class="k">return</span> <span class="n">new_msg</span> <span class="c1"># pragma: no cover</span>
 
 <span class="k">def</span> <span class="nf">lfl</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
@@ -114,6 +116,8 @@
             <span class="n">newtext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rchar</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">newtext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">splittext</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+    <span class="k">del</span> <span class="n">text</span>
+    <span class="k">del</span> <span class="n">key</span>
 
     <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">newtext</span><span class="p">)</span>
 
@@ -145,6 +149,9 @@
             <span class="n">newtext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rchar</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">newtext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">splittext</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+    
+    <span class="k">del</span> <span class="n">text</span>
+    <span class="k">del</span> <span class="n">key</span>
 
     <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">newtext</span><span class="p">)</span>
 
@@ -239,7 +246,8 @@
                 <span class="n">encrypted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">brokentext</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
             
 
-
+        <span class="k">del</span> <span class="n">key</span>
+        <span class="k">del</span> <span class="n">text</span>
         <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">encrypted</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
@@ -287,6 +295,9 @@
             
             <span class="k">if</span> <span class="n">found</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
                 <span class="n">decrypted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">brokentext</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+        
+        <span class="k">del</span> <span class="n">key</span>
+        <span class="k">del</span> <span class="n">text</span>
 
         <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">decrypted</span><span class="p">)</span>
 </pre></div>
@@ -316,7 +327,9 @@
 <span class="sd">    </span>
 <span class="sd">    - msg: The message to encrypt with the reverse cipher</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">return</span> <span class="n">msg</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># pragma: no cover</span>
+    <span class="n">new_msg</span> <span class="o">=</span> <span class="n">msg</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">del</span> <span class="n">msg</span>
+    <span class="k">return</span> <span class="n">new_msg</span> <span class="c1"># pragma: no cover</span>
 </pre></div>
 
         </details>
@@ -373,6 +386,8 @@
             <span class="n">newtext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rchar</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">newtext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">splittext</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+    <span class="k">del</span> <span class="n">text</span>
+    <span class="k">del</span> <span class="n">key</span>
 
     <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">newtext</span><span class="p">)</span>
 </pre></div>
@@ -432,6 +447,9 @@
             <span class="n">newtext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rchar</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">newtext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">splittext</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+    
+    <span class="k">del</span> <span class="n">text</span>
+    <span class="k">del</span> <span class="n">key</span>
 
     <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">newtext</span><span class="p">)</span>
 </pre></div>
@@ -555,7 +573,8 @@
                 <span class="n">encrypted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">brokentext</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
             
 
-
+        <span class="k">del</span> <span class="n">key</span>
+        <span class="k">del</span> <span class="n">text</span>
         <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">encrypted</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
@@ -603,6 +622,9 @@
             
             <span class="k">if</span> <span class="n">found</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
                 <span class="n">decrypted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">brokentext</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+        
+        <span class="k">del</span> <span class="n">key</span>
+        <span class="k">del</span> <span class="n">text</span>
 
         <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">decrypted</span><span class="p">)</span>
 </pre></div>
@@ -735,7 +757,8 @@
                 <span class="n">encrypted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">brokentext</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
             
 
-
+        <span class="k">del</span> <span class="n">key</span>
+        <span class="k">del</span> <span class="n">text</span>
         <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">encrypted</span><span class="p">)</span>
 </pre></div>
 
@@ -811,6 +834,9 @@ cipher.encrypt(text: str, key: str)
             
             <span class="k">if</span> <span class="n">found</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
                 <span class="n">decrypted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">brokentext</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+        
+        <span class="k">del</span> <span class="n">key</span>
+        <span class="k">del</span> <span class="n">text</span>
 
         <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">decrypted</span><span class="p">)</span>
 </pre></div>
