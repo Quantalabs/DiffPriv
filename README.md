@@ -16,7 +16,6 @@
 
 Differential privacy should be simple. Now that data defines our world, we need to look at the cost of privacy. Let's make protecting privacy easy.
 
-<br><br>
 
 ## What is differential privacy?
 
