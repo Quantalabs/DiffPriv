@@ -45,11 +45,16 @@ def _sanity_check():
         ')
     
     url = f'https://pypi.python.org/pypi/DiffPriv/json'
-    releases = json.loads(request.urlopen(url).read())['releases']
+
+    if url.lower().startswith('http'):
+        releases = json.loads(request.urlopen(url).read())['releases']
+    else:
+        raise ValueError from None
+
     latest_version = list(releases.items())[-1]
 
     try:
-        assert __version__ == 'v'+latest_version[0] # skipcq: BAN-B101
+        assert __version__ == 'v'+latest_version[0]
     except AssertionError:  # pragma: no cover
         # We ignore code coverage for this because there is no way to test this through pytest, but it has been tested manually
         warnings.warn(
