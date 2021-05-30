@@ -48,7 +48,7 @@ def _sanity_check():
 
     if url.lower().startswith('http'):
         releases = json.loads(request.urlopen(url).read())['releases']
-    else:
+    else: # pragma: no cover
         raise ValueError from None
 
     latest_version = list(releases.items())[-1]
