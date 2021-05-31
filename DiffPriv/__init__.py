@@ -47,7 +47,7 @@ def _sanity_check():
     url = f'https://pypi.python.org/pypi/DiffPriv/json'
 
     if url.lower().startswith('http'):
-        releases = json.loads(request.urlopen(url).read())
+        releases = json.loads(request.urlopen(url).read()) # skipcq
     else: # pragma: no cover
         raise ValueError from None
 
