@@ -1,4 +1,3 @@
-
 """
 DiffPriv is a package focused on privacy, with differential privacy and encryption schemes.
 
@@ -17,7 +16,7 @@ import csv
 import webbrowser
 import math
 import random
-import numpy
+import numpy as np
 
 # Local
 from . import diff
