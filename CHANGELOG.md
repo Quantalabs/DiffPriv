@@ -1,3 +1,15 @@
+# v1.0.1
+Patch update
+- Fix another bug with the version warning
+
+---
+# v1.0.0
+
+## Bug Fixes
+- Fix version warnings
+
+---
+
 # v1.0.0rc
 ## Bug Fixes
 - Security Fix with commit 46f3363.
