@@ -20,13 +20,15 @@ pairs = [
 
 
 def test_encryption():
-    
+    """Test encryption under normal scenarios"""
     System = diff.enc.SSS(data)
     silence = False
     shares = System.divide(5, quiet=silence)
     encrypted = System.encrypt(width=5, quiet=silence)
     
     assert shares == [314, 159, 265, 358, 979]
+    
 
 def test_decryption():
+    """Test decryption"""
     decrypted = diff.enc.dec_SSS(pairs)

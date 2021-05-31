@@ -247,7 +247,7 @@ class SSS(object):
         Turn on quiet mode with `quiet=True`
         """
         self.data = str(self.data)
-        if n > self.bytes:
+        if n > self.bytes:  # pragma: no cover
             n = self.bytes
             raise ValueError('Dividing up a byte into more shares than it has digits is currently not supported. '
                           f'Using maximum of `n={len(self.data)}` shares for data with {len(self.data)} bytes.')
@@ -259,7 +259,7 @@ class SSS(object):
 
         deleted = 0
         for i, share in enumerate(self.shares):
-            if share == '':
+            if share == '':  # pragma: no cover
                 warnings.warn(f'Share {i+deleted} holds no information. Discarding ...')
                 del self.shares[i]
                 warnings.warn(f'Share {i+deleted} has been discarded.')
