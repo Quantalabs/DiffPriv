@@ -54,7 +54,7 @@ def _sanity_check():
     latest_version = releases['info']['version']
     
 
-    try:
+    try: # pragma: no cover
         if __version__ != 'v'+latest_version:
             raise AssertionError
     except AssertionError:  # pragma: no cover
