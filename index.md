@@ -56,3 +56,4 @@ Now, you can build the package from the source with:
 ```sh
 conda setup.py install
 ```
+[View the docs](https://quantalabs.github.io/DiffPriv/docs/DiffPriv.html)
