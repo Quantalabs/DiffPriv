@@ -71,10 +71,11 @@ DiffPriv    </h1>
 <a href="https://deepsource.io/gh/Quantalabs/DiffPriv/?ref=repository-badge"><img src="https://deepsource.io/gh/Quantalabs/DiffPriv.svg/?label=active+issues&amp;show_trend=true" alt="DeepSource" /></a>
 <a href="https://codecov.io/gh/Quantalabs/DiffPriv"><img src="https://codecov.io/gh/Quantalabs/DiffPriv/branch/master/graph/badge.svg?token=wCz4qTJxEO" alt="codecov" /></a>
 <a href="https://github.com/Quantalabs/DiffPriv/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GNU%20GPL%20v3.0-green" alt="License" /></a>
-<a href="https://pepy.tech/project/diffpriv"><img src="https://pepy.tech/badge/diffpriv" alt="Downloads" /></a>
+<a href="https://pepy.tech/project/diffpriv"><img src="https://static.pepy.tech/personalized-badge/diffpriv?period=total&amp;units=none&amp;left_color=black&amp;right_color=orange&amp;left_text=PyPI%20Downloads" alt="Downloads" /></a>
 <a href="https://pepy.tech/project/diffpriv/month"><img src="https://pepy.tech/badge/diffpriv/month" alt="Downloads" /></a>
 <a href="https://pepy.tech/project/diffpriv/week"><img src="https://pepy.tech/badge/diffpriv/week" alt="Downloads" /></a> 
-<a href="https://github.com/Quantalabs/DiffPriv/discussions"><img src="https://img.shields.io/badge/Chat-on%20Discussions-green" alt="Chat on GitHub Discussions" /></a></p>
+<a href="https://github.com/Quantalabs/DiffPriv/discussions"><img src="https://img.shields.io/badge/Chat-on%20Discussions-green" alt="Chat on GitHub Discussions" /></a>
+<img src="https://img.shields.io/conda/dn/conda-forge/diffpriv?label=Anaconda%20Downloads" alt="Conda" /></p>
 
 <blockquote>
   <p>The truth is more important than ever—let's make sure easy privacy protection is available.</p>
@@ -94,7 +95,7 @@ DiffPriv    </h1>
 
 <p>To download, open up your command prompt and type</p>
 
-<div class="codehilite"><pre><span></span><code>    pip install <span class="nv">DiffPriv</span><span class="o">==</span><span class="m">1</span>.0.0b0 <span class="c1"># This is a pre-release, so you need the version number</span>
+<div class="codehilite"><pre><span></span><code>    pip install DiffPriv
 </code></pre></div>
 
 <p>or from the source repo:</p>
@@ -106,28 +107,9 @@ DiffPriv    </h1>
 
 <h3 id="conda-envioronment">Conda Envioronment</h3>
 
-<p>We currently do not have our package on Anaconda, however, we are working on getting it on conda, and should be available soon. However, there <em>is</em> a workaround for conda systems. Try building from the source with:</p>
+<p>You can install it from conda through the command:</p>
 
-<div class="codehilite"><pre><span></span><code>git clone https://github.com/Quantalabs/DiffPriv
-<span class="nb">cd</span> DiffPriv
-</code></pre></div>
-
-<p>Then, create a <code>conda</code> virtual environment which should initialize <code>pip</code> with:</p>
-
-<div class="codehilite"><pre><span></span><code>conda update conda
-conda create -n DiffPriv <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9 anaconda
-conda activate DiffPriv
-</code></pre></div>
-
-<p>Lastly, install dependencies with:</p>
-
-<div class="codehilite"><pre><span></span><code>conda install numpy
-pip install luddite  <span class="c1"># luddite is not available on conda</span>
-</code></pre></div>
-
-<p>Now, you can build the package from the source with:</p>
-
-<div class="codehilite"><pre><span></span><code>conda setup.py install
+<div class="codehilite"><pre><span></span><code>    conda install -c conda-forge diffpriv
 </code></pre></div>
 </div>
 
@@ -159,7 +141,7 @@ pip install luddite  <span class="c1"># luddite is not available on conda</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">cli</span>
 
 <span class="c1"># Metadata</span>
-<span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;v1.0.0rc&#39;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;v1.0.1&#39;</span>
 <span class="sd">&quot;&quot;&quot;Package Version&quot;&quot;&quot;</span>
 <span class="n">__stable__</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="sd">&quot;&quot;&quot;If package is stable or not.&quot;&quot;&quot;</span>
@@ -179,11 +161,18 @@ pip install luddite  <span class="c1"># luddite is not available on conda</span>
 <span class="s1">        &#39;</span><span class="p">)</span>
     
     <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://pypi.python.org/pypi/DiffPriv/json&#39;</span>
-    <span class="n">releases</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())[</span><span class="s1">&#39;releases&#39;</span><span class="p">]</span>
-    <span class="n">latest_version</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">releases</span><span class="o">.</span><span class="n">items</span><span class="p">())[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">assert</span> <span class="n">__version__</span> <span class="o">==</span> <span class="n">latest_version</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># skipcq: BAN-B101</span>
+    <span class="k">if</span> <span class="n">url</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">):</span>
+        <span class="n">releases</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># pragma: no cover</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span> <span class="kn">from</span> <span class="bp">None</span>
+
+    <span class="n">latest_version</span> <span class="o">=</span> <span class="n">releases</span><span class="p">[</span><span class="s1">&#39;info&#39;</span><span class="p">][</span><span class="s1">&#39;version&#39;</span><span class="p">]</span>
+    
+
+    <span class="k">try</span><span class="p">:</span> <span class="c1"># pragma: no cover</span>
+        <span class="k">if</span> <span class="n">__version__</span> <span class="o">!=</span> <span class="s1">&#39;v&#39;</span><span class="o">+</span><span class="n">latest_version</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span>
     <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
         <span class="c1"># We ignore code coverage for this because there is no way to test this through pytest, but it has been tested manually</span>
         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
