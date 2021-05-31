@@ -1,0 +1,33 @@
+# Globals
+* @Quantalabs
+
+# . files, project files, etc.
+.github/* @Quantalabs
+.travis.yml @Quantalabs
+.codecov.yml @Quantalabs
+.coveragerc @Quantalabs
+.deepsource.toml @Quantalabs
+.gitignore @Quantalabs
+CHANGELOG.md @Quantalabs
+CONTRIBUTING.md @Quantalabs
+LICENSE @Quantalabs
+pyproject.toml @Quantalabs
+README.md @Quantalabs
+requirements.txt @Quantalabs
+setup.cfg @Quantalabs
+setup.py @Quantalabs
+
+
+# Code
+DiffPriv/__init__.py @Quantalabs
+DiffPriv/diff.py @quantum9Innovation
+DiffPriv/enc.py @Quantalabs
+DiffPriv/cli.py @Quantalabs
+
+# Testing
+tests/* @Quantalabs
+tests/cli_test.py @Quantalabs
+tests/enc_test.py @Quantalabs @quantum9Innovation
+tests/private_test.py @quantum9Innovation
+tests/em-test.csv @quantum9Innovation
+tests/lm-test.csv @quantum9Innovation
