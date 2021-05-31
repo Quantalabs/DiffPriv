@@ -1,3 +1,8 @@
+# v1.0.1
+Patch update
+- Fix another bug with the version warning
+
+---
 # v1.0.0
 
 ## Bug Fixes

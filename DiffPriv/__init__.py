@@ -25,7 +25,7 @@ from . import enc
 from . import cli
 
 # Metadata
-__version__ = 'v1.0.0'
+__version__ = 'v1.0.1'
 """Package Version"""
 __stable__ = True
 """If package is stable or not."""
@@ -54,8 +54,9 @@ def _sanity_check():
     latest_version = releases['info']['version']
     
 
-    try:
-        assert __version__ == 'v'+latest_version
+    try: # pragma: no cover
+        if __version__ != 'v'+latest_version:
+            raise AssertionError
     except AssertionError:  # pragma: no cover
         # We ignore code coverage for this because there is no way to test this through pytest, but it has been tested manually
         warnings.warn(
