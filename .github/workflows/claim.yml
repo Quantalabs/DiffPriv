@@ -9,7 +9,6 @@ jobs:
     name: Update labels and Assign
     if: github.event.issue.pull_request == ''
       && contains(github.event.comment.body, '/claim')
-      && contains(toJson(github.event.issue.labels), 'Available')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@0.9.0
