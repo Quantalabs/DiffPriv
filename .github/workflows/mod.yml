@@ -16,20 +16,6 @@ jobs:
     steps:
       - uses: actions/github-script@0.9.0
         with:
-          github-token: ${{secrets.jun_token}}
-          script: |
-            const { data } = await github.teams.getMembershipInOrg({
-              org: "covid19india",
-              team_slug: "mods",
-              username: context.payload.sender.login,
-            });
-            console.log(data);
-            console.log("User team state: "+data.state);
-            if(data.state != "active"){
-              return;
-            }
-      - uses: actions/github-script@0.9.0
-        with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             await github.issues.removeLabel({
