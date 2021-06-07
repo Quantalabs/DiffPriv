@@ -1,8 +1,8 @@
 ---
 name: Feature request
 about: Suggest an idea.
-title: '[FEATURE]'
-labels: 'feature'
+title: "[FEATURE]"
+labels: 'Status: Review Needed, enhancement'
 assignees: ''
 
 ---
