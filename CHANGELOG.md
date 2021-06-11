@@ -1,3 +1,9 @@
+# v1.0.2
+Patch Update
+## Bug Fixes
+- Fix a formatting error in the CLI with the `--help` command. 
+
+---
 # v1.0.1
 Patch update
 - Fix another bug with the version warning
