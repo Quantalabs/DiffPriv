@@ -31,7 +31,7 @@ with open('setup.py', 'w') as py:
 
 with open('DiffPriv/__init__.py', 'r') as init:
     init_read = init.readlines()
-    init_read[27] = "__version__ = '"+version+"'\n"
+    init_read[26] = "__version__ = '"+version+"'\n"
 
 with open('DiffPriv/__init__.py', 'w') as init:
     init.writelines(init_read)
