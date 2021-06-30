@@ -194,9 +194,10 @@ def expmech(data, file_name, epsilon, u, r, sample_size=10, delta_u=None):
             else:
                 running_sum += probabilities[choice]
 
-        line.append(r_choice)
+        line.append(str(r_choice)+", ")
 
-    new_data.writelines(str(line)+'\n')
+    new_data.writelines(line)
+    new_data.write('\n')
 
     del data
     del file_name
