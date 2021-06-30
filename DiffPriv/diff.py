@@ -66,6 +66,7 @@ def lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None):
         sample_size is also optional. It gives the program an idea of what delta_f should be. It will default to 10 if left empty.
     """
     new_data = open(file_name, 'w+')
+    new_data = open(file_name, 'a+')
     raw_data = data.readlines()
 
     rows = len(raw_data)
@@ -96,10 +97,11 @@ def lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None):
 
             b = delta_f[c]/epsilon
             coin_flip = round(rd.random())
-            if coin_flip == 0: line.append(float(raw_data[r].split(',')[c]) + rd.expovariate(1 / (2 * b)))
-            if coin_flip == 1: line.append(float(raw_data[r].split(',')[c]) - rd.expovariate(1 / (2 * b)))
+            if coin_flip == 0: line.append(str(float(raw_data[r].split(',')[c]) + rd.expovariate(1 / (2 * b)))+", ")
+            if coin_flip == 1: line.append(str(float(raw_data[r].split(',')[c]) - rd.expovariate(1 / (2 * b)))+", ")
 
-        new_data.writelines(str(line)+'\n')
+        new_data.writelines(line)
+        new_data.write('\n')
 
     del data
     del file_name
