@@ -97,9 +97,10 @@ def lapmech(data, file_name, epsilon, f, sample_size=10, delta_f=None):
 
             b = delta_f[c]/epsilon
             coin_flip = round(rd.random())
-            if coin_flip == 0: line.append(str(float(raw_data[r].split(',')[c]) + rd.expovariate(1 / (2 * b)))+", ")
-            if coin_flip == 1: line.append(str(float(raw_data[r].split(',')[c]) - rd.expovariate(1 / (2 * b)))+", ")
+            if coin_flip == 0: line.append(float(raw_data[r].split(',')[c]) + rd.expovariate(1 / (2 * b)))
+            if coin_flip == 1: line.append(float(raw_data[r].split(',')[c]) - rd.expovariate(1 / (2 * b)))
 
+        line = " ".join(str(x)+", " for x in line)
         new_data.writelines(line)
         new_data.write('\n')
 
@@ -194,8 +195,9 @@ def expmech(data, file_name, epsilon, u, r, sample_size=10, delta_u=None):
             else:
                 running_sum += probabilities[choice]
 
-        line.append(str(r_choice)+", ")
+        line.append(r_choice)
 
+    line = " ".join(str(x)+", " for x in line)
     new_data.writelines(line)
     new_data.write('\n')
 
