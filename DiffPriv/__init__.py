@@ -23,9 +23,7 @@ from . import diff
 from . import enc
 from . import cli
 
-# Metadata
-__version__ = 'v1.0.1'
-"""Package Version"""
+__version__ = 'v1.0.3'
 __stable__ = True
 """If package is stable or not."""
 __source__ = 'https://github.com/Quantalabs/DiffPriv'

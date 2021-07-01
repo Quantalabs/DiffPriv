@@ -104,7 +104,7 @@ or otherwise just key for a single word key.
 def help(command=None):
     if command is None:
         print('DiffPriv CLI Help\n')
-        print('The DiffPriv CLI provides an easy way to encrypt files or use differential privacy on data quickly and easily. See documentation for more detailed help - https://diffpriv.rtfd.io')
+        print('The DiffPriv CLI provides an easy way to encrypt files or use differential privacy on data quickly and easily. See documentation for more detailed help - https://quantalabs.github.io/DiffPriv/docs/DiffPriv/cli.html')
         print('\n \nCOMMANDS')
         print('---------------------------------------\n')
         print('--help ')
