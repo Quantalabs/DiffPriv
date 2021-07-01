@@ -1,3 +1,12 @@
+# v1.0.3
+Patch Update
+
+## Bug Fixes
+ - Fix out-of-date url from diffpriv.rtfd.io to quantalabs.github.io/docs/
+ - Fix laplace and exponential mechanism formatting error.
+
+---
+
 # v1.0.2
 Patch Update
 ## Bug Fixes

@@ -17,7 +17,7 @@ def test_metadata():
     latest_version = list(releases.items())[-1]
 
     assert DiffPriv.__name__ == 'DiffPriv'
-    assert DiffPriv.__version__ == 'v1.0.2'
+    assert DiffPriv.__version__ == 'v1.0.3'
     assert DiffPriv.__stable__ == True
     assert DiffPriv.__source__ == 'https://github.com/Quantalabs/DiffPriv'
     assert DiffPriv.__docs__ == 'https://diffpriv.readthedocs.io'
