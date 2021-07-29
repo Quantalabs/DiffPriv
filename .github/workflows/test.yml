@@ -1,0 +1,32 @@
+name: test
+on: [push, pull_request]
+jobs:
+  test:
+    name: "Test on Python ${{ matrix.python_version }}"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: |
+          pip install pytest
+          pip install coverage
+          pip install codecov
+          pip install -r requirements.txt
+      - name: Test
+        run: |
+          coverage run -m pytest
+      - name: Generate Coverage Report
+        run: |
+          python -m coverage report
+          python -m coverage xml
+      - name: Upload to codecov
+        run: |
+          codecov
