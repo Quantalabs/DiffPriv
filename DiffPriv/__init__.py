@@ -19,6 +19,7 @@ import random
 import numpy as np
 
 # Local
+from . import mech
 from . import diff
 from . import enc
 from . import cli
