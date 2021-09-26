@@ -33,7 +33,7 @@ class Mechanism(object):
             A function that takes in data, along with other (optional)
             parameters, and returns a privacy-preserving transformation
             of the data.
-            NOTE: The first parameter of the mapping function should be
+            > **NOTE:** The first parameter of the mapping function should be
             the one that takes in data.
 
         - abbr:
@@ -43,17 +43,18 @@ class Mechanism(object):
             A function that takes in the same parameters as the mapping
             function and returns the privacy budget (ε) of the 
             mechanism. If delta is not provided, the mechanism should 
-            be $\\(ε, 0)$-differentially private for the given data and 
+            be (ε, 0)-differentially private for the given data and 
             parameters.
 
         - delta (`=None`): 
             A function that takes in the same parameters as the mapping
             function and returns a privacy budget (δ) of the mechanism. 
             If provided, the mechanism should be 
-            $\\(ε, δ)$-differentially private for the given data and 
+            (ε, δ)-differentially private for the given data and 
             parameters.
-            NOTE: This value will be ignored if epsilon is not also 
-            provided.
+
+            > **NOTE:** This value will be ignored if epsilon is not also 
+            > provided.
 
         """
         self.name = name
