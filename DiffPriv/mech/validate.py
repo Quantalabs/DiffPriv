@@ -4,7 +4,7 @@ class Regulator(object):
     """
     The `DiffPriv.validate.Regulator` object contains a set of rules 
     corresponding to a specific `DiffPriv.Mechanism` object. When any 
-    of these rules is violated, it triggers an appropriate error.
+    of these rules are violated, it triggers the appropriate error.
 
     """
     def __init__(self, Mechanism, params, regulators):
