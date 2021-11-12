@@ -1,3 +1,5 @@
+**This is an alpha release, meaning it might not be stable. We suggest you install the latest stable build.**
+
 ![DiffPriv Logo](https://docs.google.com/drawings/d/e/2PACX-1vQ8A92uJpy4g09GFYxayNQXOvtl0wmXXkYFiteDFSaXVcfdbcm835wc_IjjlKHlM94rjdsM7H1Szzjq/pub?w=600)
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Quantalabs/DiffPriv/Build?style=flat-square)](https://github.com/actions/workflows/test.yml)
@@ -27,17 +29,22 @@ Differential privacy allows for data to be preserved while making sure that atta
 ## Downloading DiffPriv
 To download, open up your command prompt and type
 ```sh
-    pip install DiffPriv
+    pip install DiffPriv==v2.0.0a1
 ```
 or from the source repo:
 ```sh
     git clone https://github.com/Quantalabs/DiffPriv
     cd diffpriv
+    git switch v2.0.0-alpha1
     python setup.py install
 ```
 ### Conda Envioronment
 
 You can install it from conda through the command:
 ```sh
-conda install -c conda-forge diffpriv
+conda install -c conda-forge/label/diffpriv_dev diffpriv
 ```
+
+### Docs
+
+Once installed, check out the docs at https://quantalabs.github.io/v2a1/
