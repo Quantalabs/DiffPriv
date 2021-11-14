@@ -35,25 +35,11 @@ or from the source repo:
     python setup.py install
 ```
 ### Conda Envioronment
-We currently do not have our package on Anaconda, however, we are working on getting it on conda, and should be available soon. However, there *is* a workaround for conda systems. Try building from the source with:
 
+Conda installation is avaliable through conda-forge:
 ```sh
-git clone https://github.com/Quantalabs/DiffPriv
-cd DiffPriv
+    conda install -c conda-forge diffpriv
+    conda install -c conda-forge/label/diffpriv_dev diffpriv # alpha release
 ```
-Then, create a `conda` virtual environment which should initialize `pip` with:
-```sh
-conda update conda
-conda create -n DiffPriv python=3.9 anaconda
-conda activate DiffPriv
-```
-Lastly, install dependencies with:
-```sh
-conda install numpy
-pip install luddite  # luddite is not available on conda
-```
-Now, you can build the package from the source with:
-```sh
-conda setup.py install
-```
-[View the docs](https://quantalabs.github.io/DiffPriv/docs/DiffPriv.html)
+
+[View the docs](https://quantalabs.github.io/DiffPriv/docs/DiffPriv.html) - **or [view the docs to the latest alpha release - 2.0.0a1](https://quantalabs.github.io/DiffPriv/v2a1)**
