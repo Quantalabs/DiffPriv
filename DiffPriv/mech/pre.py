@@ -1,6 +1,7 @@
 """Builtin mechanisms"""
 
-import main
+from . import main
+import numpy as np
 
 def randresponse():
     """

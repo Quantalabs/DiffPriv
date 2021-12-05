@@ -1,17 +1,22 @@
 """
-This is a very basic test intended to ensure that v2a1 is ready to ship.
+This is a very basic test intended to ensure that v2a2 is ready to ship.
 This test should be run before releasing *all* v2 alpha releases.
 """
 
 from DiffPriv import mech
 import math, random
 
-def test_v2a1_ready():
+def test_v2a2_ready():
     """
-    This test ensures that v2a1 is ready to ship.
+    This test ensures that v2a2 is ready to ship.
     This test should be run before releasing *all* v2 alpha releases.
     """
     
+    randresp = mech.pre.randresponse()
+
+    print(randresp.about())
+    print(randresp([0,1,0,1,0,0,1,0,1,1,1,0,1,0]))
+
     def random_response(data):
         out = []
         for x in data:

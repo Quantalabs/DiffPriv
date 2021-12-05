@@ -1,4 +1,4 @@
-# v2a1
+# v2a2
 ## What's Changed
 * Initial Restructuring of the package, as detailed in #33 (The other functions still are avaliable, but will be removed and deprecated in the future.)
 
