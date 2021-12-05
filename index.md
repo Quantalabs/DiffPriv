@@ -42,4 +42,4 @@ Conda installation is avaliable through conda-forge:
     conda install -c conda-forge/label/diffpriv_dev diffpriv # alpha release
 ```
 
-[View the docs](https://quantalabs.github.io/DiffPriv/docs/DiffPriv.html) - **or [view the docs to the latest alpha release - 2.0.0a1](https://quantalabs.github.io/DiffPriv/v2a1)**
+[View the docs](https://quantalabs.github.io/DiffPriv/docs/DiffPriv.html) - **or [view the docs to the latest alpha release - 2.0.0a2](https://quantalabs.github.io/DiffPriv/v2a2)**
