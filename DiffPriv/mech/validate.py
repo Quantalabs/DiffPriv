@@ -3,7 +3,7 @@
 class Regulator(object):
     """
     The `DiffPriv.validate.Regulator` object contains a set of rules 
-    corresponding to a specific `DiffPriv.Mechanism` object. When any 
+    corresponding to a specific `DiffPriv.mech.Mechanism` object. When any 
     of these rules are violated, it triggers the appropriate error.
 
     """
@@ -15,7 +15,7 @@ class Regulator(object):
 
         - Mechanism:
             An object (or list of objects) of the type 
-            `DiffPriv.Mechanism` to regulate
+            `DiffPriv.mech.Mechanism` to regulate
 
         - params:
             A dictionary of differential privacy parameters.

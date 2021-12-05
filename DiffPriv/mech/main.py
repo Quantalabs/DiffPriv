@@ -5,7 +5,7 @@ The main module in the `mech` subpackage.
 > module).
 """
 
-from . import math
+import math
 
 
 class Mechanism(object):
@@ -139,7 +139,7 @@ class Mechanism(object):
 
     def __repr__(self):
         """Python representation (for debugging purposes)"""
-        return f'`DiffPriv.Mechanism` object @ <{self.name}>'
+        return f'`DiffPriv.mech.Mechanism` object @ <{self.name}>'
 
     def __str__(self):
         """String representation (name)"""
@@ -185,7 +185,7 @@ class Mechanism(object):
         """
         if not isinstance(other, Mechanism):
             raise TypeError(f'Cannot add {type(other)} to a '
-                            f'`DiffPriv.Mechanism` object')
+                            f'`DiffPriv.mech.Mechanism` object')
 
         return Mechanism(
             name=f'{self.name} + {other.name}',
@@ -211,11 +211,11 @@ class Mechanism(object):
         """
 
         if not isinstance(scalar, int):
-            raise TypeError(f'Cannot multiply a `DiffPriv.Mechanism` object '
+            raise TypeError(f'Cannot multiply a `DiffPriv.mech.Mechanism` object '
                             f'by a {type(scalar)}')
         
         if scalar < 1:
-            raise ValueError(f'Cannot multiply a `DiffPriv.Mechanism` object '
+            raise ValueError(f'Cannot multiply a `DiffPriv.mech.Mechanism` object '
                              f'by a negative or zero number')
 
         def mapping(data, *args, **kwargs):
