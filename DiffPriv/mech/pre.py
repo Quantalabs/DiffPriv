@@ -2,6 +2,7 @@
 
 from . import main
 from . import random as rd
+from . import math
 import numpy as np
 
 def randresponse():
