@@ -1,3 +1,9 @@
+# v2a3
+
+## What's Changed
+* **_BREAKING CHANGES!!_** Remove `diff` module
+* Move exponential mechanism and laplace mechanisms to the `mech.pre` submodule.
+
 # v2a2
 
 ## What's Changed
