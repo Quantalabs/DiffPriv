@@ -1,6 +1,7 @@
 """Builtin mechanisms"""
 
 from . import main
+from . import random as rd
 import numpy as np
 
 def randresponse():
