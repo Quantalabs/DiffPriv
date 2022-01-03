@@ -1,14 +1,14 @@
 """
-This is a very basic test intended to ensure that v2a2 is ready to ship.
+This is a very basic test intended to ensure that v2a3 is ready to ship.
 This test should be run before releasing *all* v2 alpha releases.
 """
 
 from DiffPriv import mech
 import math, random
 
-def test_v2a2_ready():
+def test_v2a3_ready():
     """
-    This test ensures that v2a2 is ready to ship.
+    This test ensures that v2a3 is ready to ship.
     This test should be run before releasing *all* v2 alpha releases.
     """
     
@@ -65,3 +65,28 @@ def test_v2a2_ready():
 
     print(f'Double eval: {Double_Random_Response(test_set)}')
     print(f'Triple eval: {Triple_Random_Response(test_set)}')
+
+    def test_expmech():
+        def bid_yield(arr, sell):
+
+            count = 0
+            for i in range(len(arr)):
+
+                if arr[i] >= sell:
+                    count+=1
+
+            return sell*count
+
+
+        file = open('tests/em-test.csv', 'r')
+        mech.pre.expmech(file, 'em-encrypted_test.csv', 3.0, bid_yield, range(0, 10))
+
+    def test_lapmech():
+        def avg(arr):
+
+            sum = 0
+            for i in arr: sum += i
+            return sum / len(arr)
+
+        file = open('tests/lm-test.csv', 'r')
+        mech.pre.lapmech(file, 'lm-encrypted_test.csv', 1.0, avg)
