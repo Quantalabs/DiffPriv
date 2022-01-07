@@ -35,7 +35,7 @@ or from the source repo:
 ```sh
     git clone https://github.com/Quantalabs/DiffPriv
     cd diffpriv
-    git switch v2.0.0-alpha3
+    git switch v2.0.0-beta1
     python setup.py install
 ```
 ### Conda Envioronment
