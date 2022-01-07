@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="DiffPriv",
-    version="v2.0.0a3",
+    version="v2.0.0b1",
     author="Quantalabs",
     description="A Differential Privacy Package",
     long_description=long_description,
