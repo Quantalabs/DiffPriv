@@ -19,11 +19,16 @@ import random
 import numpy as np
 
 # Local
+"""
 from . import mech
 from . import enc
 from . import cli
+"""
+# Read setup.cfg to find version
+with open('../setup.cfg', 'r') as f:
+    setup_cfg = f.readlines()
+    __version__ = setup_cfg[2].replace('\n', '').replace('version = ', '')
 
-__version__ = 'v1.0.3'
 __stable__ = True
 """If package is stable or not."""
 __source__ = 'https://github.com/Quantalabs/DiffPriv'
@@ -58,8 +63,8 @@ def _sanity_check():
         # We ignore code coverage for this because there is no way to test this through pytest, but it has been tested manually
         warnings.warn(
             '\u001b[33m \n'
-            'You have DiffPriv '+__version__+', however, newer versions are avaliable. Use \n'
-            '   pip install --upgrade DiffPriv \n'
+            'You have DiffPriv '+__version__+', however, a newer version or stable release is avaliable. Use \n'
+            '   pip install DiffPriv=='+latest_version+'\n'
             'to upgrade your package. \u001b[0m'    
         )
 
