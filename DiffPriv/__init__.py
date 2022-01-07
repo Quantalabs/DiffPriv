@@ -24,11 +24,11 @@ from . import enc
 from . import cli
 
 # Read setup.cfg to find version
-with open('../setup.cfg', 'r') as f:
+with open('setup.cfg', 'r') as f:
     setup_cfg = f.readlines()
     __version__ = setup_cfg[2].replace('\n', '').replace('version = ', '')
 
-__stable__ = True
+__stable__ = False
 """If package is stable or not."""
 __source__ = 'https://github.com/Quantalabs/DiffPriv'
 """Source Repo"""
