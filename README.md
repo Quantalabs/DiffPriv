@@ -29,13 +29,13 @@ Differential privacy allows for data to be preserved while making sure that atta
 ## Downloading DiffPriv
 To download, open up your command prompt and type
 ```sh
-    pip install DiffPriv==v2.0.0b1
+    pip install DiffPriv==v2.0.0b2
 ```
 or from the source repo:
 ```sh
     git clone https://github.com/Quantalabs/DiffPriv
     cd diffpriv
-    git switch v2.0.0-beta1
+    git switch v2.0.0-beta2
     python setup.py install
 ```
 ### Conda Envioronment
