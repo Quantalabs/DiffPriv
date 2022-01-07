@@ -1,4 +1,4 @@
-"""Mechanism base utils"""
+"""The mech module contains the DiffPriv Differential Privacy Mechanisms. See the `mech.main` module for more."""
 
 from .. import math
 from .. import random

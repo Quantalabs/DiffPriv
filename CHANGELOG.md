@@ -1,3 +1,8 @@
+# v2b1
+
+## Fixes
+* Update sanity check to include warnings if you are not on a stable release.
+
 # v2a3
 
 ## What's Changed

@@ -19,11 +19,10 @@ import random
 import numpy as np
 
 # Local
-"""
 from . import mech
 from . import enc
 from . import cli
-"""
+
 # Read setup.cfg to find version
 with open('../setup.cfg', 'r') as f:
     setup_cfg = f.readlines()
