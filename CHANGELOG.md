@@ -1,3 +1,8 @@
+# v2b2
+
+## Fixes
+* Fix versioning error
+
 # v2b1
 
 ## Fixes
